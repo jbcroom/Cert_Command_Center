@@ -1,4 +1,4 @@
-export const config = { maxDuration: 60 }
+export const config = { runtime: 'edge' }
 
 function logUsage(supabaseUrl, supabaseKey, feature, certId, usage) {
   if (!supabaseUrl || !supabaseKey || !usage) return

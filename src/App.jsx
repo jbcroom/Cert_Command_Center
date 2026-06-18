@@ -1,7 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AuthProvider, useAuth } from './context/AuthContext'
+import { supabase } from './lib/supabaseClient'
 import LoginScreen from './components/auth/LoginScreen'
+import FirstRunScreen from './components/shared/FirstRunScreen'
 import AppShell from './components/layout/AppShell'
 import Dashboard from './pages/Dashboard'
 import CertPage from './pages/CertPage'
@@ -146,8 +148,18 @@ function AppRoutes() {
 
 function AppContent() {
   const { session } = useAuth()
+  const [certCount, setCertCount] = useState(undefined)
 
-  if (session === undefined) {
+  useEffect(() => {
+    if (!session) return
+    supabase
+      .from('certifications')
+      .select('id', { count: 'exact', head: true })
+      .then(({ count }) => setCertCount(count ?? 0))
+      .catch(() => setCertCount(0))
+  }, [session])
+
+  if (session === undefined || (session && certCount === undefined)) {
     return (
       <div className="min-h-screen bg-bg-primary flex items-center justify-center">
         <span className="text-text-muted text-sm">Loading…</span>
@@ -156,6 +168,8 @@ function AppContent() {
   }
 
   if (session === null) return <LoginScreen />
+
+  if (certCount === 0) return <FirstRunScreen />
 
   return (
     <BrowserRouter>

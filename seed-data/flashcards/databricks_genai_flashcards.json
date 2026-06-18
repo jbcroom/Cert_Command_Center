@@ -1,0 +1,272 @@
+[
+  {
+    "domain_name": "Application Development",
+    "question": "What is the purpose of LLM guardrails in a GenAI application?",
+    "answer": "Guardrails are checks and constraints placed around an LLM's inputs and outputs to prevent negative outcomes such as harmful content generation, prompt injection exploitation, leaking sensitive data, or producing responses outside the application's intended scope.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "What attributes should guide selecting the best LLM for a given application?",
+    "answer": "Factors include the model's task suitability (e.g. summarization vs. code generation), context length, latency and cost, licensing, and benchmark performance on metrics relevant to the application's specific use case rather than general leaderboard rankings alone.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "What information does a model card typically provide when selecting a model from a hub or marketplace?",
+    "answer": "Model cards describe the model's intended use, training data, performance benchmarks, known limitations, licensing terms, and resource requirements, helping an engineer judge fit for a task before committing to integration.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "How does MLflow support agentic system development beyond simple model tracking?",
+    "answer": "MLflow's Agent Framework integration supports tracing agent execution steps, logging intermediate reasoning and tool calls, and evaluating agent outputs end-to-end, not just logging a single model's parameters and metrics as in traditional ML tracking.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "How do the evaluation and monitoring phases differ in the GenAI application lifecycle?",
+    "answer": "Evaluation happens before and during development to validate quality against test sets and benchmarks. Monitoring happens after deployment, continuously tracking live performance, drift, costs, and user feedback on production traffic.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "How can a multi-agent system leverage Genie Spaces or a conversational API to retrieve data?",
+    "answer": "An agent can delegate natural-language data questions to a Genie Space, which translates them into queries against governed data and returns structured or conversational answers, letting the multi-agent system access enterprise data without each agent needing custom query logic.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "What NLP task category fits an application that condenses a paragraph-long memo into a single-sentence summary capturing its intent?",
+    "answer": "Summarization, since the task explicitly compresses longer text into a shorter form that preserves the core meaning, distinct from text classification (assigning a label) or text2text generation (a broader category that doesn't specify the compression goal).",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "How should an engineer select an embedding model context length when cost and latency matter more than quality?",
+    "answer": "Choose the smallest embedding model whose context length still comfortably covers the chunk size (e.g. a 512-token context model for 512-token chunks), since smaller models with shorter context windows are cheaper and faster, and matching rather than over-provisioning context length avoids unnecessary compute cost.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "What is the difference between qualitatively assessing GenAI responses for quality versus safety issues?",
+    "answer": "Quality assessment checks whether the response is accurate, coherent, and relevant to the prompt. Safety assessment checks whether the response avoids harmful, biased, or policy-violating content, regardless of how factually correct or well-written it is.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "How can a prompt be augmented with additional context from a user's input?",
+    "answer": "By extracting key fields, terms, or intents from the user's message and inserting them into the prompt template, so the LLM receives explicit context (like an account ID or product name) rather than relying solely on its general training to fill gaps.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "What CI/CD practices apply specifically to GenAI agent development?",
+    "answer": "Updating Vector Search indexes as part of deployment, promoting prompt versions across dev/staging/production environments with approval gates, and testing individual chain or agent components in isolation before integrated testing.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "What does coding a chain as a pyfunc model with pre- and post-processing accomplish?",
+    "answer": "It wraps the chain's input transformation, model invocation, and output formatting into a single MLflow pyfunc interface, allowing the entire chain to be logged, registered, served, and queried as one deployable unit regardless of its internal complexity.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "What are the basic elements needed to create a RAG application according to MLflow conventions?",
+    "answer": "Model flavor, embedding model, retriever, dependencies, input examples, and model signature; together these let MLflow correctly package, validate, and serve the RAG chain with proper input/output typing.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "Why register a model to Unity Catalog using MLflow rather than just logging it to an experiment?",
+    "answer": "Registering to Unity Catalog brings the model under centralized governance, access control, lineage tracking, and lifecycle management (versions, aliases) across the organization, whereas an experiment-logged model is only tracked within that experiment's scope.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "What is required to create and query a Vector Search index in Databricks?",
+    "answer": "A source Delta table (often with a primary key and embedding column) synced to a Vector Search endpoint, which then supports similarity queries that return the most relevant rows based on vector distance to a query embedding.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "When should ai_query() be used instead of an interactive model serving endpoint?",
+    "answer": "ai_query() is suited for batch inference workloads where you need to apply a model across many rows of data at once within SQL or a pipeline, rather than for low-latency, one-at-a-time interactive requests that a real-time serving endpoint handles.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "What factors determine the right Vector Search configuration for a given solution?",
+    "answer": "The number of embeddings (scale), update frequency (how often the index needs refreshing), latency requirements, and cost constraints together determine whether to use standard or storage-optimized vector search and whether features like hybrid search and reranking should be enabled.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "How should a Generative AI Engineer secure a Databricks App that calls a Mosaic AI Agent endpoint on behalf of authenticated users?",
+    "answer": "Route the call through the app's backend using the app's own credentials, enforcing user identity and permissions via the app's authenticated context, rather than embedding long-lived tokens or API keys directly in browser-side JavaScript.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "What is the recommended way to manage prompt templates across development, staging, and production with rollback support?",
+    "answer": "Track prompts as MLflow versions and promote them using aliases once they pass validation, since this preserves full version history and supports rollback, unlike overwriting a file or table in place on every deployment.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "What is the difference between a managed, external, and custom MCP server in the context of agent tool integration?",
+    "answer": "A managed MCP server is provided and maintained by Databricks for common data sources. An external MCP server is run by a third party and typically requires credentials like an API key. A custom MCP server is built in-house to wrap one or more resources behind a unified interface the agent can call.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "What factors should guide a chunking strategy for a given document structure?",
+    "answer": "The document's natural structure (sections, paragraphs, tables), the model's context window and token constraints, and the retrieval use case all matter: dense technical documents may need smaller chunks with overlap, while narrative text can tolerate larger chunks.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "What is an advanced chunking strategy beyond simple fixed-size splitting, and when is it useful?",
+    "answer": "Recursive or semantic chunking splits text along natural boundaries (sentences, sections, semantic shifts) rather than a fixed character count, useful when document structure carries meaning and naive fixed-size splits would cut sentences or ideas in half.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "What tools and metrics are commonly used to evaluate retrieval performance in a RAG system?",
+    "answer": "Metrics like precision@k, recall@k, and relevance scoring, often computed using MLflow's evaluation utilities, assess whether the retriever surfaces the right documents for a given query before the LLM ever sees them.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "What is the purpose of re-ranking in the information retrieval process for a RAG application?",
+    "answer": "Re-ranking takes an initial set of candidate documents retrieved by a fast but less precise method (like vector similarity) and reorders them using a more accurate, often more expensive model to push the most relevant results to the top before they're passed to the LLM.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "What is the typical sequence for writing chunked text into Delta Lake tables in Unity Catalog?",
+    "answer": "Extract and clean source content, apply the chunking strategy, generate embeddings if needed, then write the chunks (with metadata like source, chunk_id, and embedding vector) into a Unity Catalog-governed Delta table so it can be indexed by Vector Search.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "Which Python package is best suited for extracting text from scanned image-based documents (.jpeg, .png) with minimal code?",
+    "answer": "pytesseract, since it wraps Tesseract OCR and is purpose-built for extracting text from images, unlike beautifulsoup, scrapy, or pyquery which are designed for parsing HTML/web content rather than performing optical character recognition.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "Why does filtering extraneous content from source documents matter for RAG quality?",
+    "answer": "Boilerplate, navigation text, headers/footers, or duplicate content dilute the embedding space and can be retrieved instead of substantive content, degrading the relevance of retrieved context and lowering the quality of generated answers.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Design Applications",
+    "question": "What is the difference between selecting a model task and choosing chain components when designing a GenAI application?",
+    "answer": "Selecting a model task means identifying which NLP capability (summarization, classification, generation) fits the business requirement. Choosing chain components means deciding what pieces (retriever, prompt template, LLM, output parser) wire together to produce the desired input and output for that task.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Design Applications",
+    "question": "How should an engineer translate a business use case into pipeline design for a GenAI application?",
+    "answer": "By explicitly describing the desired inputs (user query, context documents, metadata) and outputs (format, length, tone) the AI pipeline must produce, then working backward to choose the model, chain steps, and tools that satisfy those input/output requirements.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Design Applications",
+    "question": "What does it mean to 'define and order tools' for multi-stage reasoning in an agent design?",
+    "answer": "It means specifying which tools the agent can call to gather knowledge or take actions (search, calculator, database lookup) and the sequence in which they should be invoked, since the order affects whether the agent has the right context before taking later actions.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Design Applications",
+    "question": "What is Agent Bricks' Knowledge Assistant designed to solve?",
+    "answer": "Knowledge Assistant is a Databricks Agent Bricks tool for building agents that answer questions grounded in a specific knowledge base or document set, suited to problems where the primary need is accurate retrieval-augmented Q&A rather than multi-agent orchestration or structured extraction.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Design Applications",
+    "question": "When would you choose Agent Bricks' Multiagent Supervisor over a single agent?",
+    "answer": "When a problem requires coordinating multiple specialized sub-agents (each handling a distinct task or domain) under a supervising agent that routes requests and synthesizes their outputs, rather than one agent trying to handle all responsibilities itself.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Design Applications",
+    "question": "What is the role of Information Extraction within Agent Bricks?",
+    "answer": "Information Extraction is suited for tasks that pull structured data (fields, entities, values) out of unstructured text or documents, distinct from open-ended Q&A or multi-agent coordination use cases.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "What do Inference Tables and Agent Monitoring provide for a live LLM endpoint?",
+    "answer": "Inference Tables automatically log requests and responses from a serving endpoint, while Agent Monitoring layers on top to track agent-specific behavior over time, together enabling ongoing visibility into a deployed endpoint's real-world performance.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "What Databricks features help control LLM costs in production?",
+    "answer": "AI Gateway rate limiting, usage tracking via Usage Tables, choosing appropriately sized models for the task, and caching or batching strategies to reduce redundant calls all contribute to managing ongoing inference cost.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "What is the purpose of inference logging for a deployed RAG application?",
+    "answer": "Inference logging captures each request, the retrieved context, and the generated response, creating a record that can be used to assess real-world performance, audit behavior, and feed future evaluation or fine-tuning efforts.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "Which evaluation judges require ground truth, and why does that matter for choosing an evaluation approach?",
+    "answer": "Judges that score correctness or factual accuracy against a known answer require ground truth labels, while judges assessing more subjective qualities like helpfulness or coherence can sometimes operate without it; knowing which is needed determines whether you must first build a labeled evaluation set.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "How should SME (subject matter expert) feedback be incorporated to improve agent performance reliably?",
+    "answer": "Define clear evaluation rubrics, calibrate SMEs on those criteria so ratings are consistent, and use the aligned judgments within a structured evaluation process like mlflow.genai.evaluate(), rather than averaging inconsistent scores or deferring entirely to an LLM-as-judge without reconciling disagreement.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "How does MLflow scoring and tracing support agent performance evaluation?",
+    "answer": "Tracing captures the step-by-step execution of an agent (tool calls, intermediate reasoning, retrieved context), while scoring applies evaluation metrics or judges to those traces, letting engineers diagnose not just whether an answer was wrong but where in the chain it went wrong.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "What key metrics should be monitored for a deployed LLM application in production?",
+    "answer": "Latency, error rates, token usage and cost, output quality drift over time, and user feedback signals, since production behavior can diverge from evaluation-time performance as real traffic patterns emerge.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "What quantitative evaluation metrics typically inform an LLM size and architecture decision?",
+    "answer": "Metrics like accuracy or task-specific scores, latency, throughput, and cost per token or per request, weighed against the application's actual requirements rather than choosing the largest or most capable model by default.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Governance",
+    "question": "What guardrail techniques help protect a GenAI application against malicious user inputs?",
+    "answer": "Input validation and sanitization, prompt injection detection, content filtering on both inputs and outputs, and rate limiting are common techniques to prevent users from manipulating the model into unsafe or unintended behavior.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Governance",
+    "question": "What guardrail technique uses masking to meet a data protection or performance objective?",
+    "answer": "Masking replaces or obscures sensitive values (PII, account numbers) in data passed to or returned by the LLM, allowing the application to use realistic-looking data for context while preventing exposure of the actual sensitive values.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Governance",
+    "question": "What's a recommended approach for handling problematic text discovered in a data source feeding a GenAI application?",
+    "answer": "Recommend an alternative source or remediation, such as filtering, redacting, or replacing the problematic content, rather than leaving it in place where it could be retrieved and surfaced to end users.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Governance",
+    "question": "Why must legal and licensing requirements for data sources be considered when building a GenAI application?",
+    "answer": "Using data without proper licensing or in violation of usage terms can expose the organization to legal liability, so engineers must verify that source documents and any third-party data feeding the application are properly licensed for the intended use.",
+    "difficulty": "medium"
+  }
+]

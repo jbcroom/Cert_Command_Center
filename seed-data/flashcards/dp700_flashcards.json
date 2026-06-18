@@ -1,0 +1,182 @@
+[
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "What's the key difference between a Fabric Lakehouse and a Fabric Warehouse?",
+    "answer": "A Lakehouse supports both Spark and SQL engines and stores files plus tables, ideal for data engineering and mixed workloads. A Warehouse is a fully relational, T-SQL-only engine with full transactional DML support, ideal for traditional BI and reporting workloads.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "What is a Microsoft Fabric Lakehouse?",
+    "answer": "A data architecture in Fabric that combines the flexibility of a data lake with the structure and query performance of a data warehouse. It stores data in Delta Lake format in OneLake and can be queried via Spark, SQL, or Power BI directly.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "What is the difference between workspace roles and item-level permissions in Fabric?",
+    "answer": "Workspace roles (Admin, Member, Contributor, Viewer) grant broad access to everything in a workspace. Item-level permissions let you grant more granular access to a specific Lakehouse, Warehouse, or report without giving full workspace access.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "How does Git integration work in Microsoft Fabric?",
+    "answer": "Fabric workspaces can connect to a Git repository (Azure DevOps or GitHub) so that item definitions are version-controlled. Changes can be committed, branched, and synced between the workspace and the repo, enabling source control for analytics artifacts.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "What are Fabric deployment pipelines used for?",
+    "answer": "They promote Fabric items (notebooks, pipelines, semantic models, reports) across Development, Test, and Production workspace stages in a controlled, repeatable way, supporting CI/CD practices for analytics solutions.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "What is a Fabric capacity and why does it matter for workspace assignment?",
+    "answer": "A capacity is the pool of compute resources (measured in Capacity Units) that powers all Fabric workloads in a workspace. Every workspace must be assigned to a capacity (F SKU or trial) and that capacity's size determines available throughput and concurrency for Spark, SQL, and pipeline operations.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "What is OneLake and how does it relate to Fabric items?",
+    "answer": "OneLake is the single, unified, tenant-wide data lake underlying all of Fabric. Every workspace and every item (Lakehouse, Warehouse, KQL Database) automatically stores its data in OneLake in Delta format, eliminating the need to copy or move data between engines.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is Eventstream in Microsoft Fabric?",
+    "answer": "Eventstream is a no-code feature for capturing, transforming, and routing real-time streaming data from sources like Event Hubs, IoT Hub, or Kafka into Fabric destinations such as a KQL Database, Lakehouse, or another Eventstream.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is a parameterized pipeline and why is it useful in Fabric?",
+    "answer": "A parameterized pipeline accepts input values (like file paths, table names, or date ranges) at runtime, allowing a single pipeline definition to be reused across multiple datasets, environments, or schedules instead of duplicating pipeline logic.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is schema drift and how do Fabric pipelines handle it?",
+    "answer": "Schema drift occurs when source data structure changes unexpectedly (new, removed, or renamed columns). Fabric Data Pipelines and Dataflows can be configured to automatically detect and map drifted columns, preventing pipeline failures from minor source schema changes.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is a copy activity's 'merge' vs 'overwrite' behavior in a Fabric pipeline?",
+    "answer": "Overwrite replaces the entire destination table/file each run. Merge (upsert) compares incoming rows against existing data using a key and updates matching rows while inserting new ones, preserving historical data not present in the new batch.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is Delta Lake's role in Fabric's storage format, and why does it matter?",
+    "answer": "Delta Lake is an open-source storage format that adds ACID transactions, schema enforcement, and time travel to Parquet files. Fabric uses Delta as its default table format across Lakehouses and Warehouses, enabling reliable concurrent reads/writes and version history.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is the difference between batch and streaming ingestion, and which Fabric tools support each?",
+    "answer": "Batch ingestion processes data in scheduled, discrete chunks (Data Pipelines, Dataflows Gen2, Notebooks on a schedule). Streaming ingestion processes data continuously as it arrives (Eventstream, structured streaming in Spark notebooks) for near-real-time use cases.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is a KQL Database used for in Fabric, and when would you choose it over a Lakehouse?",
+    "answer": "A KQL Database is optimized for high-volume, time-series, and semi-structured data such as logs, telemetry, and IoT events, queried using Kusto Query Language. Choose it over a Lakehouse when low-latency analytics on streaming/event data is the priority rather than batch analytics.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is the medallion architecture and how does it apply in Fabric?",
+    "answer": "A data design pattern using Bronze (raw ingested data), Silver (cleaned and conformed data), and Gold (business-ready, aggregated data) layers, typically implemented in Fabric using separate Lakehouse zones or schemas to progressively refine data quality.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "When should you use a Notebook instead of a Dataflow Gen2 for data transformation?",
+    "answer": "Notebooks (using PySpark, Scala, or Spark SQL) are preferred for complex transformations, large-scale data processing, custom logic, or when you need full programmatic control and reusability. Dataflows Gen2 are better for simpler, visual, business-analyst-friendly transformations.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is the difference between a Data Pipeline and a Dataflow Gen2 in Fabric?",
+    "answer": "A Data Pipeline orchestrates activities (copy data, run notebooks, trigger other pipelines) on a schedule or trigger, similar to Azure Data Factory. A Dataflow Gen2 is a low-code, Power Query-based tool for ingesting and transforming data with a visual interface, better suited to business-user-driven ETL.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is a Shortcut in Microsoft Fabric?",
+    "answer": "A symbolic link to external data sources (Azure Data Lake, S3, OneLake) that makes external data appear as if it lives in the Lakehouse without physically copying it.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What are the two primary data ingestion methods in Microsoft Fabric pipelines?",
+    "answer": "Copy Activity (for bulk data movement between sources and destinations) and Dataflow Gen2 (for low-code ETL/ELT transformations using Power Query).",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What tool do you use to monitor Fabric capacity utilization?",
+    "answer": "The Microsoft Fabric Capacity Metrics app — shows CU (Capacity Unit) consumption, throttling events, and per-workspace breakdowns.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What is the Fabric Monitoring Hub used for?",
+    "answer": "The Monitoring Hub provides a centralized view of all running and completed activities across a tenant, pipeline runs, Spark jobs, dataflow refreshes, letting you track status, duration, and failures in one place rather than checking each item individually.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What is query folding in the context of Dataflow Gen2 performance?",
+    "answer": "Query folding pushes transformation logic back to the source system (e.g. a SQL database) so filtering/aggregation happens there instead of pulling all raw data into Fabric first. Transformations that break folding force more data movement and slower performance.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What alerting options exist for monitoring Fabric pipeline failures?",
+    "answer": "Fabric supports configuring activity-level alerts (via Data Activator or pipeline failure notifications) that can trigger emails, Teams messages, or Power Automate flows when a pipeline run fails or a threshold condition is met.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What is the difference between Spark's lazy evaluation and eager execution, and why does it matter for performance tuning?",
+    "answer": "Spark builds a logical execution plan (lazy evaluation) and only actually runs computations when an action like .show() or .write() triggers it. Understanding this helps avoid unnecessary recomputation and lets you use .cache() strategically for data reused across multiple actions.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What is partition pruning and why does it improve query performance?",
+    "answer": "Partition pruning allows a query engine to skip reading data partitions that can't match the query's filter conditions (e.g. skipping irrelevant date partitions), reducing the amount of data scanned and significantly speeding up queries on large partitioned tables.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "How do you troubleshoot a failed Fabric pipeline run?",
+    "answer": "Open the pipeline run in the Monitoring Hub, inspect the failed activity's error message and input/output details, check upstream dependencies (source availability, permissions), and review activity-level logs for Spark or copy activity failures.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What is Z-ORDER optimization on a Delta table and when should you use it?",
+    "answer": "Z-ORDER co-locates related data in the same files based on specified columns, improving the efficiency of queries that filter on those columns. Use it on large tables where queries frequently filter on a specific high-cardinality column such as customer_id or date.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What is Delta table OPTIMIZE and VACUUM used for, and why does table maintenance matter?",
+    "answer": "OPTIMIZE compacts many small Parquet files into larger ones to improve read performance. VACUUM removes old, unreferenced data files past the retention window to reclaim storage. Regular maintenance prevents the small files problem that degrades query performance over time.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What is the Fabric Capacity Metrics app and what does it show?",
+    "answer": "A Power BI app that visualizes capacity consumption over time across all workloads (Spark, SQL, pipelines, Power BI), showing which items are consuming the most CUs and when throttling or overage is occurring.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What are Capacity Units (CUs) and why do they matter for performance troubleshooting?",
+    "answer": "CUs represent the compute throughput available to a Fabric capacity. When CU consumption spikes or is throttled, queries and pipeline runs slow down or queue; monitoring CU usage in the Capacity Metrics app helps diagnose performance bottlenecks tied to capacity limits rather than code issues.",
+    "difficulty": "hard"
+  }
+]

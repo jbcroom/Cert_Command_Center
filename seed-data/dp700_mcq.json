@@ -1,0 +1,587 @@
+[
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "A compliance team needs sensitive columns in a Warehouse to display masked values to most users but full values to an approved group. What is the most direct way to achieve this with Fabric/SQL features?",
+    "options": [
+      "Apply a sensitivity label only",
+      "Implement dynamic data masking and/or column-level security in the Warehouse",
+      "Move the column to a separate Lakehouse",
+      "Disable the SQL analytics endpoint"
+    ],
+    "correct_index": 1,
+    "explanation": "Dynamic data masking and column-level security let you obscure or restrict specific columns for most users while granting full access to an authorized group.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "A Lakehouse table needs to be discoverable and queryable by both Spark notebooks and Power BI reports without duplicating storage. Which Fabric design principle enables this?",
+    "options": [
+      "Each engine maintains its own private copy of the data",
+      "OneLake's single-copy model, where one Delta table in OneLake is accessible across Spark, SQL, and Power BI engines",
+      "Power BI always imports a snapshot into its own storage",
+      "Notebooks and Power BI cannot share the same table"
+    ],
+    "correct_index": 1,
+    "explanation": "OneLake's 'one copy' principle stores data once and makes it accessible across multiple compute engines (Spark, SQL, Power BI) without duplication.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "A semantic model needs to restrict which rows a sales rep can see based on their assigned region. Which feature should be configured?",
+    "options": [
+      "Workspace role assignment",
+      "Row-level security (RLS) via DAX roles",
+      "A sensitivity label",
+      "Item-level permission on the Lakehouse"
+    ],
+    "correct_index": 1,
+    "explanation": "Row-level security implemented through DAX roles restricts visible rows based on the user's identity, such as their assigned region.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "A team wants to query data stored in an Azure Data Lake Storage Gen2 account from within a Fabric Lakehouse without copying the files. What should they create?",
+    "options": [
+      "A Shortcut to the ADLS Gen2 location",
+      "A Dataflow Gen2 with a destination set to the Lakehouse",
+      "A Mirrored Database pointing at ADLS Gen2",
+      "A pipeline Copy activity scheduled hourly"
+    ],
+    "correct_index": 0,
+    "explanation": "A Shortcut creates a reference to data stored elsewhere without duplicating it, exactly fitting a 'query without copying' requirement.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "A Warehouse and a Lakehouse both expose a SQL analytics endpoint. What is a key limitation of the Lakehouse's SQL endpoint compared to a Warehouse?",
+    "options": [
+      "It cannot be queried at all",
+      "It is read-only; data modification (INSERT/UPDATE/DELETE) must happen through Spark or pipelines, not T-SQL",
+      "It only supports KQL, not T-SQL",
+      "It requires a separate capacity"
+    ],
+    "correct_index": 1,
+    "explanation": "The Lakehouse SQL analytics endpoint is read-only for T-SQL; writes happen through Spark notebooks, Dataflows, or pipelines, whereas a Warehouse supports full T-SQL DML.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "A workspace needs to run pipelines and notebooks using a managed identity rather than a specific user's credentials, so connections survive staff turnover. What addresses this?",
+    "options": [
+      "A workspace identity",
+      "A sensitivity label",
+      "A deployment pipeline stage",
+      "A capacity SKU upgrade"
+    ],
+    "correct_index": 0,
+    "explanation": "A workspace identity is a managed identity tied to the workspace itself, allowing secure connections to resources like ADLS without depending on an individual user's credentials.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "An organization wants every change to a Lakehouse notebook tracked with full commit history and the ability to branch for testing. What should be configured?",
+    "options": [
+      "Deployment pipelines only",
+      "Git integration with Azure DevOps or GitHub",
+      "A sensitivity label on the notebook",
+      "A capacity-level audit log export"
+    ],
+    "correct_index": 1,
+    "explanation": "Fabric workspaces can connect to a Git repository so item definitions are version-controlled, supporting commits, branching, and syncing.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "What does promoting or certifying an item (such as a semantic model) in Fabric primarily signal to other users?",
+    "options": [
+      "That the item has passed automated unit tests",
+      "That the item meets a recognized quality bar and can be trusted as an authoritative source",
+      "That the item is locked from further edits",
+      "That the item has been moved to a production capacity"
+    ],
+    "correct_index": 1,
+    "explanation": "Endorsement (promoted/certified) is a discoverability and trust signal, telling other users an item meets a quality bar, not a technical lock or test result.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "What happens to underlying OneLake data when you delete a Shortcut?",
+    "options": [
+      "The source data is permanently deleted",
+      "Only the reference is removed; the source data at the original location is untouched",
+      "The data is moved to the recycle bin of the source system",
+      "A backup copy is automatically created first"
+    ],
+    "correct_index": 1,
+    "explanation": "Because a shortcut is just a pointer/reference, deleting it removes only that reference; the underlying data at the original location is unaffected.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "What is the primary difference between a workspace role and an item-level permission in Fabric?",
+    "options": [
+      "Workspace roles only apply to Power BI reports",
+      "Item-level permissions grant access to a specific Lakehouse, Warehouse, or report without full workspace access, while workspace roles grant broader access",
+      "Item-level permissions override capacity limits",
+      "Workspace roles are configured per-item, not per-workspace"
+    ],
+    "correct_index": 1,
+    "explanation": "Workspace roles (Admin, Member, Contributor, Viewer) grant broad access to everything in the workspace, while item-level permissions allow more granular, scoped access to individual items.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "Which capacity-related concept determines how many concurrent Spark, pipeline, and warehouse operations a workspace can run before throttling occurs?",
+    "options": [
+      "The workspace role assigned to the admin",
+      "The Fabric capacity SKU (e.g., F64) assigned to the workspace",
+      "The number of Shortcuts configured",
+      "The deployment pipeline stage"
+    ],
+    "correct_index": 1,
+    "explanation": "The Fabric capacity SKU defines the compute units (CUs) available, which governs how much concurrent workload a workspace can sustain before throttling.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "Which deployment construct lets a team move a set of Fabric items (reports, semantic models, pipelines) from a Development workspace to Test and then Production in a controlled sequence?",
+    "options": [
+      "A deployment pipeline",
+      "A domain",
+      "A capacity migration",
+      "A Git branch merge only"
+    ],
+    "correct_index": 0,
+    "explanation": "Deployment pipelines manage promotion of Fabric content across Dev/Test/Production stages in a controlled, repeatable sequence.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "Which Fabric construct groups related workspaces together for governance, ownership, and policy purposes across a business area?",
+    "options": [
+      "A capacity",
+      "A domain",
+      "A deployment pipeline",
+      "A workspace role"
+    ],
+    "correct_index": 1,
+    "explanation": "Fabric domains group related workspaces for governance and discoverability, letting organizations apply consistent policy across a business area like Finance or Marketing.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "Which of the following best describes the relationship between a Fabric workspace and a capacity?",
+    "options": [
+      "A workspace can only ever be assigned to exactly one capacity at a time, but a capacity can host multiple workspaces",
+      "A capacity can only ever host one workspace",
+      "Capacities and workspaces are unrelated billing constructs",
+      "Every item in a workspace requires its own dedicated capacity"
+    ],
+    "correct_index": 0,
+    "explanation": "A capacity is the underlying compute/billing resource; a workspace is assigned to one capacity, and a single capacity can host many workspaces.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Implement and manage analytics solutions",
+    "question": "Which semantic model storage mode queries Delta tables directly from OneLake at report time without importing a copy into memory, while still offering import-like performance?",
+    "options": [
+      "Import mode",
+      "DirectQuery mode",
+      "Direct Lake mode",
+      "Composite mode"
+    ],
+    "correct_index": 2,
+    "explanation": "Direct Lake mode reads Delta Parquet files directly from OneLake, combining near-import performance with always-current data, unlike traditional DirectQuery which pushes every query to the source.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "A business analyst wants to build a low-code, visual ETL flow using Power Query to cleanse and load data into a Lakehouse, without writing Spark code. Which Fabric item should they use?",
+    "options": [
+      "A Data Pipeline with only Copy activities",
+      "A Dataflow Gen2",
+      "A Notebook with PySpark",
+      "An Eventstream"
+    ],
+    "correct_index": 1,
+    "explanation": "Dataflow Gen2 provides a low-code, Power Query-based visual interface for transformation, well suited to business-user-driven ETL.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "A company needs to continuously replicate changes from an on-premises SQL Server database into Fabric with minimal latency and minimal custom pipeline logic. What is the best-fit feature?",
+    "options": [
+      "A scheduled Copy activity running every 5 minutes",
+      "Mirroring",
+      "A Dataflow Gen2 refresh on a timer",
+      "An Eventstream with a custom connector"
+    ],
+    "correct_index": 1,
+    "explanation": "Mirroring is purpose-built for continuous, low-latency replication of source databases into Fabric (as Delta tables in OneLake) without hand-built incremental pipeline logic.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "A notebook needs to upsert new and changed records into an existing Delta table while preserving unmatched rows. Which Delta Lake operation accomplishes this?",
+    "options": [
+      "OVERWRITE",
+      "MERGE",
+      "TRUNCATE",
+      "VACUUM"
+    ],
+    "correct_index": 1,
+    "explanation": "Delta Lake's MERGE statement supports conditional upserts, inserting new rows and updating matched rows while preserving unmatched existing rows.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "A pipeline needs to check whether a file exists before running a downstream Copy activity, and stop gracefully if it doesn't. Which combination of activities supports this?",
+    "options": [
+      "Notebook activity only",
+      "Get Metadata activity combined with an If Condition activity",
+      "Eventstream and KQL update policy",
+      "Mirroring with a fallback rule"
+    ],
+    "correct_index": 1,
+    "explanation": "A Get Metadata activity can check for file existence, and an If Condition activity can branch the pipeline logic based on that result, including stopping gracefully.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "A pipeline run fails partway through. What is the most appropriate way to ensure the pipeline doesn't reprocess already-completed activities when retried?",
+    "options": [
+      "Always restart the entire pipeline from the first activity",
+      "Design activities to be idempotent and use checkpoints/parameters so reruns don't duplicate already-completed work",
+      "Disable all error handling",
+      "Delete the pipeline and recreate it"
+    ],
+    "correct_index": 1,
+    "explanation": "Idempotent activity design combined with checkpointing or parameter-driven logic ensures reruns don't reprocess or duplicate already-completed work.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "A source system occasionally adds a new column without notice. The ingestion pipeline should adapt automatically rather than fail. What capability should be configured?",
+    "options": [
+      "Schema drift handling",
+      "A fixed schema enforcement rule",
+      "Mirroring",
+      "A capacity SKU increase"
+    ],
+    "correct_index": 0,
+    "explanation": "Schema drift handling allows a data flow or pipeline to accommodate source columns that change over time without manually updating the schema each time.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "An ingestion process needs to load only rows that changed since the last run, using a stored 'last loaded' timestamp. What pattern is being implemented?",
+    "options": [
+      "Full load with truncate-and-reload",
+      "Incremental load using a watermark",
+      "Schema drift handling",
+      "Mirroring"
+    ],
+    "correct_index": 1,
+    "explanation": "An incremental load pattern using a watermark (a stored high-water-mark value like a timestamp or ID) loads only new or changed rows since the last successful run.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is the main advantage of using a Notebook's %%configure magic command at the start of a session?",
+    "options": [
+      "It deletes prior session state",
+      "It allows setting Spark session-level configuration (such as executor memory) before any code executes",
+      "It replaces the need for a Lakehouse",
+      "It schedules the notebook to run hourly"
+    ],
+    "correct_index": 1,
+    "explanation": "%%configure lets you set Spark session configuration, such as executor memory or core counts, before the session starts executing other cells.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is the primary orchestration mechanism in Fabric for sequencing activities like Copy, Notebook execution, and conditional branching on a schedule or trigger?",
+    "options": [
+      "A Dataflow Gen2",
+      "A Data Pipeline",
+      "A semantic model refresh",
+      "A KQL database update policy"
+    ],
+    "correct_index": 1,
+    "explanation": "A Data Pipeline orchestrates activities such as Copy, notebook runs, and conditional logic on a schedule or trigger, similar to Azure Data Factory.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "What is the purpose of parameterizing a Data Pipeline?",
+    "options": [
+      "To make the pipeline run faster by skipping validation",
+      "To allow the same pipeline definition to be reused across different inputs, such as table names or date ranges, without duplicating the pipeline",
+      "To restrict the pipeline to a single workspace",
+      "To disable logging during execution"
+    ],
+    "correct_index": 1,
+    "explanation": "Parameters let a single pipeline definition be reused with different runtime values (table names, dates, paths), avoiding duplicated pipeline logic.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "When should a Notebook be preferred over a Dataflow Gen2 for a transformation task?",
+    "options": [
+      "When the transformation is simple column renaming only",
+      "When the workload requires complex custom logic, large-scale distributed processing, or libraries not exposed through Power Query",
+      "When the target is a Power BI report only",
+      "Notebooks should never be used for transformation"
+    ],
+    "correct_index": 1,
+    "explanation": "Notebooks give full Spark (PySpark/Scala/SQL) flexibility for complex logic and large-scale distributed processing that exceeds what Power Query in Dataflow Gen2 can efficiently express.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "Which Fabric item is purpose-built for ingesting and routing high-volume, real-time streaming data (e.g., from IoT devices or clickstreams) before it lands in a Lakehouse or KQL database?",
+    "options": [
+      "A Dataflow Gen2",
+      "An Eventstream",
+      "A Warehouse",
+      "A deployment pipeline"
+    ],
+    "correct_index": 1,
+    "explanation": "Eventstream is designed to capture, transform, and route real-time event data at scale into destinations like Lakehouses, Warehouses, or KQL databases.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "Which statement about Spark pools in Fabric notebooks is accurate?",
+    "options": [
+      "Every notebook run requires manually provisioning a dedicated VM cluster",
+      "Fabric provides starter pools that reduce session startup latency, with autoscaling based on workload",
+      "Spark pools are only available for Python, not SQL",
+      "Spark pools cannot be configured per workspace"
+    ],
+    "correct_index": 1,
+    "explanation": "Fabric's starter pools reduce cold-start latency for Spark sessions and autoscale based on workload demand, unlike manually provisioned dedicated clusters.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "Why is a KQL database typically chosen over a Warehouse for telemetry and log analytics workloads?",
+    "options": [
+      "KQL databases are cheaper in all scenarios",
+      "KQL is optimized for fast, ad hoc querying of high-volume, time-series and semi-structured event data",
+      "Warehouses cannot store time-series data at all",
+      "KQL databases replace the need for Lakehouses entirely"
+    ],
+    "correct_index": 1,
+    "explanation": "KQL (Kusto Query Language) databases are optimized for time-series and log/telemetry analytics, offering fast ad hoc querying over high-volume semi-structured event data.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Ingest and transform data",
+    "question": "Within a Dataflow Gen2, what determines where the transformed output is written?",
+    "options": [
+      "The workspace role of the creator",
+      "The configured data destination, which can be a Lakehouse, Warehouse, or other supported sink",
+      "The capacity SKU",
+      "It is always written back to the original source"
+    ],
+    "correct_index": 1,
+    "explanation": "A Dataflow Gen2's data destination setting determines the sink for transformed output, such as a specific Lakehouse table or Warehouse.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "A large fact table query repeatedly scans data outside the relevant date range. Which optimization technique would most directly address this?",
+    "options": [
+      "Query folding",
+      "Partition pruning based on a partition column such as date",
+      "V-Order optimization",
+      "Increasing the capacity SKU only"
+    ],
+    "correct_index": 1,
+    "explanation": "Partition pruning lets the query engine skip irrelevant partitions entirely (e.g., dates outside the filter range), reducing the data scanned.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "A nightly batch job consistently runs close to the capacity's CU limit and occasionally triggers throttling. Besides increasing the SKU, what is a reasonable mitigation?",
+    "options": [
+      "Schedule the job to run during a less contended time window or spread work across smaller, staggered jobs",
+      "Disable monitoring so the throttling alert disappears",
+      "Convert the job from a pipeline to a Dataflow Gen2 with no other changes",
+      "Delete the Capacity Metrics app"
+    ],
+    "correct_index": 0,
+    "explanation": "Rescheduling to off-peak windows or staggering/splitting workloads reduces concurrent CU demand, which can avoid throttling without necessarily upgrading the capacity SKU.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "A pipeline owner notices many tiny Parquet files being written by frequent streaming micro-batches into a Delta table. What long-term optimization habit addresses this?",
+    "options": [
+      "Reducing the batch frequency to zero",
+      "Scheduling periodic OPTIMIZE (compaction) jobs on the affected table",
+      "Switching the table to CSV format",
+      "Disabling the streaming job permanently"
+    ],
+    "correct_index": 1,
+    "explanation": "Frequent small writes from streaming create the 'small file problem'; scheduling periodic OPTIMIZE compaction jobs consolidates them into fewer, larger files for better read performance.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "A team wants to trace which upstream pipeline and notebook produced a specific Lakehouse table, to support impact analysis before making a schema change. Which feature supports this?",
+    "options": [
+      "Capacity Metrics app",
+      "Lineage view",
+      "Deployment pipeline history",
+      "Git commit log only"
+    ],
+    "correct_index": 1,
+    "explanation": "The Lineage view visually maps the upstream and downstream dependencies between items, supporting impact analysis before changes.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "An admin wants to see which workspaces are consuming the most compute units (CUs) on a shared capacity and whether throttling has occurred. Which tool should they use?",
+    "options": [
+      "The Monitoring hub",
+      "The Capacity Metrics app",
+      "Lineage view",
+      "Workspace Git settings"
+    ],
+    "correct_index": 1,
+    "explanation": "The Capacity Metrics app reports CU consumption per workspace/item against a capacity, including throttling and smoothing behavior.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "Capacity smoothing in Fabric is best described as:",
+    "options": [
+      "A feature that permanently increases your capacity SKU",
+      "A mechanism that spreads bursty background job CU consumption over a rolling window to avoid sharp throttling spikes",
+      "A way to disable billing temporarily",
+      "A setting that only affects Power BI report rendering"
+    ],
+    "correct_index": 1,
+    "explanation": "Smoothing distributes background operations' compute consumption over a rolling time window, reducing the chance of a short burst triggering throttling.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What does query folding refer to in the context of Dataflow Gen2 performance?",
+    "options": [
+      "Compressing the output file size",
+      "Pushing transformation logic back to the source system so filtering/aggregation happens there instead of pulling all raw data first",
+      "Folding multiple dataflows into one visual canvas",
+      "Archiving old dataflow runs"
+    ],
+    "correct_index": 1,
+    "explanation": "Query folding pushes transformation steps back to the source (e.g., a SQL database) so the work happens there, reducing data movement; steps that break folding force more data to be pulled before transforming.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What does the VACUUM command do on a Delta table?",
+    "options": [
+      "Compacts small files like OPTIMIZE",
+      "Removes old, unreferenced data files beyond the retention threshold to reclaim storage",
+      "Rebuilds table statistics",
+      "Restores a table to a previous version"
+    ],
+    "correct_index": 1,
+    "explanation": "VACUUM removes files that are no longer referenced by the Delta transaction log and are older than the retention threshold, reclaiming storage space.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What is the effect of running OPTIMIZE on a Delta table that has accumulated many small files from frequent small writes?",
+    "options": [
+      "It deletes old data permanently",
+      "It compacts small files into larger ones, improving read performance",
+      "It converts the table to Parquet from Delta format",
+      "It disables further writes to the table"
+    ],
+    "correct_index": 1,
+    "explanation": "OPTIMIZE compacts many small files into fewer, larger files, which improves read performance by reducing file-open overhead during scans.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What is the practical implication of Spark's lazy evaluation model for a notebook developer tuning performance?",
+    "options": [
+      "Every line of code executes immediately upon being written",
+      "Transformations build a logical plan that only executes when an action (like .show() or .write()) is called, so unnecessary intermediate actions should be avoided",
+      "Lazy evaluation only applies to SQL, not DataFrames",
+      "It means Spark cannot reuse any prior computation"
+    ],
+    "correct_index": 1,
+    "explanation": "Spark builds a logical execution plan and defers actual computation until an action triggers it, so developers should avoid unnecessary actions that force premature, repeated execution.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "What kind of insight does Fabric's workspace-level monitoring (backed by a KQL database) primarily provide?",
+    "options": [
+      "Real-time billing invoices",
+      "Detailed, queryable operational logs and metrics about Spark, pipeline, and warehouse activity across the workspace",
+      "A visual designer for new pipelines",
+      "A backup of all workspace items"
+    ],
+    "correct_index": 1,
+    "explanation": "Fabric workspace monitoring stores detailed operational telemetry (Spark application logs, pipeline run details, query activity) in a queryable KQL database for deeper analysis than the Monitoring hub's summary view.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "Which Fabric feature would you configure to automatically send a Teams message when a critical pipeline fails?",
+    "options": [
+      "Capacity Metrics app",
+      "Data Activator (Reflex) or pipeline failure notifications",
+      "Lineage view",
+      "A sensitivity label"
+    ],
+    "correct_index": 1,
+    "explanation": "Data Activator (Reflex items) and built-in pipeline failure notifications can trigger alerts such as Teams messages, emails, or Power Automate flows when conditions like failures occur.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "Which Fabric tool provides a centralized view of running and historical activity across pipelines, notebooks, and Spark jobs for a user or workspace?",
+    "options": [
+      "The Capacity Metrics app",
+      "The Monitoring hub",
+      "The Lineage view",
+      "Data Activator"
+    ],
+    "correct_index": 1,
+    "explanation": "The Monitoring hub centralizes visibility into running and historical activity (pipeline runs, notebook executions, Spark jobs) across items the user has access to.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "Why does caching a DataFrame with .cache() help performance when the same DataFrame is used in multiple downstream Spark actions?",
+    "options": [
+      "It permanently writes the DataFrame to OneLake",
+      "It avoids recomputing the DataFrame's lineage each time an action triggers evaluation, since Spark uses lazy evaluation",
+      "It disables Spark's query optimizer",
+      "It automatically partitions the data by date"
+    ],
+    "correct_index": 1,
+    "explanation": "Because Spark uses lazy evaluation, an uncached DataFrame's computation chain may be re-executed for each downstream action; caching stores the result so it isn't recomputed each time.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Monitor and optimize analytics solutions",
+    "question": "Why might updating table statistics (e.g., via ANALYZE TABLE) improve query performance in a Warehouse or Lakehouse SQL endpoint?",
+    "options": [
+      "It physically reorders the data on disk",
+      "It gives the query optimizer accurate information to choose better join orders and execution plans",
+      "It compresses the table automatically",
+      "It removes the need for indexes entirely"
+    ],
+    "correct_index": 1,
+    "explanation": "Up-to-date statistics help the query optimizer make better-informed decisions about join order, filter selectivity, and overall execution plan, which can significantly improve performance.",
+    "difficulty": "hard"
+  }
+]

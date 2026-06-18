@@ -1,0 +1,730 @@
+[
+  {
+    "domain_name": "Big Data & Data Science",
+    "question": "According to DMBOK, why does poor foundational data management practice undermine data science initiatives even when sophisticated models are used?",
+    "options": [
+      "Model sophistication always compensates for poor data quality",
+      "Data science outputs are only as reliable as the underlying data; without trustworthy, well-governed data, even advanced models produce unreliable results",
+      "Data management and data science are entirely unrelated disciplines",
+      "DMBOK does not address data science at all"
+    ],
+    "correct_index": 1,
+    "explanation": "DMBOK frames data science as dependent on strong foundational practices like quality and governance; without trustworthy data, sophisticated models still produce unreliable outputs.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Big Data & Data Science",
+    "question": "How does a data lake generally differ from a traditional data warehouse in terms of stored data?",
+    "options": [
+      "A data lake can store raw, unstructured, and semi-structured data alongside structured data, while a traditional warehouse typically stores curated, structured data",
+      "A data warehouse can store any data type with no curation required",
+      "Data lakes cannot be queried by analytics tools",
+      "There is no meaningful difference between the two"
+    ],
+    "correct_index": 0,
+    "explanation": "Data lakes are designed to hold raw and varied data formats with flexible structure, while traditional data warehouses typically hold curated, structured, modeled data.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Big Data & Data Science",
+    "question": "What is a defining characteristic of a 'schema-on-read' approach, often used in data lakes, compared to traditional 'schema-on-write'?",
+    "options": [
+      "The schema is enforced before any data is stored, exactly like a relational database",
+      "Data is stored in a flexible or raw form, and structure is applied at the time of query or analysis rather than at ingestion",
+      "Schema-on-read forbids storing unstructured data",
+      "There is no difference between the two approaches"
+    ],
+    "correct_index": 1,
+    "explanation": "Schema-on-read defers structure definition until query time, allowing flexible storage of raw or varied data, unlike schema-on-write which enforces structure at ingestion.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Big Data & Data Science",
+    "question": "Which of the 'three Vs' commonly used to define Big Data refers to the range of structured, semi-structured, and unstructured data types involved?",
+    "options": [
+      "Volume",
+      "Velocity",
+      "Variety",
+      "Value"
+    ],
+    "correct_index": 2,
+    "explanation": "Variety refers to the diversity of data types and formats encountered in Big Data contexts, as distinct from Volume (scale) and Velocity (speed of generation/processing).",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Architecture",
+    "question": "A 'current-state' versus 'target-state' data architecture comparison is primarily used to:",
+    "options": [
+      "Document the existing system landscape and define the desired future landscape, identifying the gap and roadmap between them",
+      "Decide which vendor offers the cheapest licensing",
+      "Replace the need for any data modeling work",
+      "Determine individual employee data access rights"
+    ],
+    "correct_index": 0,
+    "explanation": "Comparing current-state and target-state architectures identifies the gap between what exists today and the desired future state, informing a roadmap to close that gap.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Architecture",
+    "question": "How does data architecture typically relate to broader enterprise (IT) architecture frameworks?",
+    "options": [
+      "Data architecture is entirely unrelated to enterprise architecture",
+      "Data architecture is a specialized domain within enterprise architecture, focused specifically on data assets and their flows, often aligned with frameworks like TOGAF",
+      "Data architecture always supersedes enterprise architecture in authority",
+      "Enterprise architecture frameworks explicitly forbid addressing data concerns"
+    ],
+    "correct_index": 1,
+    "explanation": "Data architecture is typically treated as a specialized domain within the broader enterprise architecture discipline, often aligning with established frameworks such as TOGAF.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Architecture",
+    "question": "What is the primary purpose of an enterprise data architecture practice?",
+    "options": [
+      "To select which programming language developers must use",
+      "To provide a structured blueprint of data assets, their relationships, and how they support the organization's strategy and operations",
+      "To replace the need for a data governance program",
+      "To manage employee performance reviews"
+    ],
+    "correct_index": 1,
+    "explanation": "Data architecture provides a structural blueprint connecting data assets, their relationships, and integration patterns to organizational strategy, distinct from governance or HR functions.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Architecture",
+    "question": "Which artifact would a data architecture team most likely produce to communicate how major data subject areas relate to one another at a high level, independent of specific systems?",
+    "options": [
+      "A detailed physical database DDL script",
+      "A conceptual/subject-area data model",
+      "A network firewall diagram",
+      "An employee org chart"
+    ],
+    "correct_index": 1,
+    "explanation": "A conceptual or subject-area data model communicates high-level relationships among major data domains without committing to specific systems or physical implementation details.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Governance",
+    "question": "A data governance council disagrees on who 'owns' a customer data domain that spans Sales, Marketing, and Support. What governance mechanism is designed to resolve this kind of cross-functional accountability question?",
+    "options": [
+      "Ignoring the conflict until it resolves itself",
+      "A clearly defined RACI (or similar accountability) model agreed upon by the governance council",
+      "Deleting the disputed data domain",
+      "Letting whichever department asks first claim ownership permanently"
+    ],
+    "correct_index": 1,
+    "explanation": "A formal accountability model such as RACI, ratified by the governance council, is the standard mechanism for resolving cross-functional ownership ambiguity over shared data domains.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Governance",
+    "question": "A data steward is primarily accountable for which of the following?",
+    "options": [
+      "Writing application code that consumes the data",
+      "The quality, definition, and appropriate use of specific data domains, acting as a subject-matter point of accountability",
+      "Procuring hardware for the data center",
+      "Approving the company's annual IT budget"
+    ],
+    "correct_index": 1,
+    "explanation": "Data stewards are accountable for the meaning, quality, and proper use of specific data domains, serving as the business-facing point of accountability rather than handling infrastructure or budgets.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Governance",
+    "question": "In the DAMA-DMBOK framework, what is the core distinction between data governance and data management?",
+    "options": [
+      "They are identical terms used interchangeably",
+      "Governance is the exercise of authority and control over data assets (the 'what' and 'why'), while management is the execution of activities to achieve governance goals (the 'how')",
+      "Governance only applies to IT systems, never to business processes",
+      "Management always reports up to governance, with no other relationship"
+    ],
+    "correct_index": 1,
+    "explanation": "Governance sets direction, policy, and decision rights over data, while management carries out the day-to-day activities needed to fulfill those governance objectives.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Governance",
+    "question": "Why does DAMA-DMBOK depict Data Governance at the center of the DAMA Wheel?",
+    "options": [
+      "Because governance is the least important knowledge area",
+      "Because governance coordinates and touches every other data management discipline rather than operating as an isolated function",
+      "Because governance is only relevant to regulated industries",
+      "Because governance replaces the need for the other knowledge areas"
+    ],
+    "correct_index": 1,
+    "explanation": "Governance is positioned centrally because it provides oversight and coordination across all the other knowledge areas, rather than functioning as a separate, standalone activity.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Integration & Interoperability",
+    "question": "A use case requires near-instant propagation of an inventory update from a point-of-sale system to an e-commerce platform. Which integration approach best fits?",
+    "options": [
+      "Nightly batch file transfer",
+      "Real-time or near-real-time event-based integration (e.g., message queues or streaming)",
+      "A quarterly manual data export",
+      "A one-time historical data migration"
+    ],
+    "correct_index": 1,
+    "explanation": "Near-instant propagation requirements call for real-time or near-real-time event-driven integration rather than periodic batch transfers.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Integration & Interoperability",
+    "question": "An organization has dozens of applications integrating point-to-point, creating a tangled, hard-to-maintain web of connections. Which architectural pattern is designed to address this?",
+    "options": [
+      "Adding more point-to-point connections",
+      "A hub-and-spoke or enterprise service bus (ESB) pattern that centralizes integration logic",
+      "Removing all integrations entirely",
+      "Switching every application to a single monolith"
+    ],
+    "correct_index": 1,
+    "explanation": "Hub-and-spoke or ESB patterns centralize integration logic through a common intermediary, reducing the complexity of many direct point-to-point connections.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Integration & Interoperability",
+    "question": "What is the key difference between ETL and ELT integration patterns?",
+    "options": [
+      "ETL transforms data before loading into the target; ELT loads raw data first and transforms it within the target system",
+      "They are exactly the same process under different names",
+      "ELT never involves a transformation step",
+      "ETL can only be used for real-time integration"
+    ],
+    "correct_index": 0,
+    "explanation": "ETL transforms data in a staging area before loading it into the target, while ELT loads raw data into the target first and performs transformation there, often leveraging the target's compute power.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Integration & Interoperability",
+    "question": "Why is data interoperability considered distinct from, but related to, data integration?",
+    "options": [
+      "They are unrelated concepts with no overlap",
+      "Interoperability concerns the ability of systems to exchange and meaningfully interpret data (e.g., via shared standards/formats), which integration efforts depend on to succeed",
+      "Interoperability only applies to hardware, never data",
+      "Integration is a subset of security, not related to interoperability"
+    ],
+    "correct_index": 1,
+    "explanation": "Interoperability is about systems being able to exchange and correctly interpret data, often via shared standards or formats, which underpins successful integration efforts.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Management Process",
+    "question": "A data management program plans to improve capabilities incrementally over multiple cycles, using lessons from each cycle to refine the next. This approach reflects:",
+    "options": [
+      "A one-time, never-repeated project",
+      "A continuous improvement methodology applied to data management processes",
+      "Complete avoidance of process documentation",
+      "A purely ad hoc, undocumented approach"
+    ],
+    "correct_index": 1,
+    "explanation": "Continuous improvement methodologies apply iterative cycles of assessment and refinement to data management processes, rather than treating improvement as a single one-time event.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Management Process",
+    "question": "What is the primary purpose of a data management maturity model?",
+    "options": [
+      "To rank employees by seniority",
+      "To assess current data management capabilities against defined maturity levels and identify gaps for improvement",
+      "To replace the need for any data architecture",
+      "To set quarterly sales targets"
+    ],
+    "correct_index": 1,
+    "explanation": "A maturity model provides a structured way to assess current capabilities against defined levels, helping identify gaps and prioritize improvement initiatives.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Management Process",
+    "question": "Which component is essential to a data management strategy document, according to DMBOK guidance?",
+    "options": [
+      "A list of unrelated marketing campaigns",
+      "A clear vision, goals, and roadmap connecting data management initiatives to organizational objectives",
+      "A complete history of every employee hired",
+      "A guarantee that no future changes will be needed"
+    ],
+    "correct_index": 1,
+    "explanation": "A data management strategy should articulate vision, goals, and a roadmap that ties data initiatives directly to broader organizational objectives.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Management Process",
+    "question": "Why is organizational change management considered important when rolling out a new data governance process?",
+    "options": [
+      "Change management is irrelevant to data initiatives",
+      "New processes require people to adopt new behaviors and roles, and change management addresses resistance and adoption explicitly",
+      "It only applies to software deployments, never to process changes",
+      "It replaces the need for executive sponsorship"
+    ],
+    "correct_index": 1,
+    "explanation": "Rolling out new governance processes requires people to change behavior and adopt new roles; change management practices explicitly address resistance and support adoption.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Modeling & Design",
+    "question": "A reporting team deliberately introduces some redundancy into a data mart's tables to reduce the number of joins needed for common queries. This is an example of:",
+    "options": [
+      "Normalization",
+      "Denormalization",
+      "Entity resolution",
+      "Schema-on-read"
+    ],
+    "correct_index": 1,
+    "explanation": "Denormalization intentionally introduces redundancy to optimize read performance for specific query patterns, trading some normalization benefits for query simplicity and speed.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Modeling & Design",
+    "question": "In a star schema, what role does a dimension table play relative to the fact table?",
+    "options": [
+      "It stores the numeric, measurable events being analyzed",
+      "It provides descriptive context (such as time, product, or customer attributes) for analyzing the facts",
+      "It replaces the need for a fact table entirely",
+      "It is always physically merged into the fact table"
+    ],
+    "correct_index": 1,
+    "explanation": "Dimension tables provide descriptive, contextual attributes that let analysts slice and filter the measurable events stored in the central fact table.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Modeling & Design",
+    "question": "What is the main purpose of normalizing a relational data model?",
+    "options": [
+      "To improve report rendering speed in Power BI",
+      "To reduce data redundancy and improve data integrity by organizing data into related tables based on functional dependencies",
+      "To increase the number of joins required for every query",
+      "To eliminate the need for primary keys"
+    ],
+    "correct_index": 1,
+    "explanation": "Normalization organizes data to minimize redundancy and maintain integrity by structuring tables according to functional dependencies, though it can increase the number of joins needed.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Modeling & Design",
+    "question": "Which level of data modeling focuses on technology-independent business concepts and their relationships, without specifying tables or columns?",
+    "options": [
+      "Physical data model",
+      "Conceptual data model",
+      "Logical data model only",
+      "Database index design"
+    ],
+    "correct_index": 1,
+    "explanation": "A conceptual data model captures business concepts and relationships at a high level, independent of any specific technology or implementation detail.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Quality",
+    "question": "A data quality scorecard reported to leadership typically aggregates which kind of information?",
+    "options": [
+      "Individual employee performance ratings",
+      "Measured results across data quality dimensions (accuracy, completeness, etc.) against defined thresholds, often by domain or system",
+      "Network uptime statistics only",
+      "Software license renewal dates"
+    ],
+    "correct_index": 1,
+    "explanation": "A data quality scorecard summarizes measured performance across quality dimensions against thresholds, giving leadership a consolidated view of data health by domain or system.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Quality",
+    "question": "A dataset has no missing values in a required field, but many values are factually wrong (e.g., an impossible birth date). Which data quality dimension is most directly violated?",
+    "options": [
+      "Completeness",
+      "Accuracy",
+      "Timeliness",
+      "Uniqueness"
+    ],
+    "correct_index": 1,
+    "explanation": "Accuracy concerns whether data correctly reflects real-world values; a field can be fully populated (complete) yet still inaccurate.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Quality",
+    "question": "Data profiling, as a data quality practice, is primarily used to:",
+    "options": [
+      "Encrypt sensitive columns automatically",
+      "Analyze the actual content, structure, and statistics of data to discover quality issues and patterns before defining rules",
+      "Replace the need for any data governance oversight",
+      "Permanently delete records that fail validation"
+    ],
+    "correct_index": 1,
+    "explanation": "Data profiling examines actual data content and structure to surface patterns and quality issues, typically as a precursor to defining formal data quality rules.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Quality",
+    "question": "When a recurring data quality issue is traced back to a specific upstream source system's input form lacking validation, what data quality practice does this exemplify?",
+    "options": [
+      "Ignoring the issue since it originates upstream",
+      "Root cause analysis, addressing the issue at its source rather than only correcting downstream symptoms",
+      "Permanently disabling the upstream system",
+      "Masking the affected column"
+    ],
+    "correct_index": 1,
+    "explanation": "Root cause analysis traces quality issues back to their originating source, enabling a fix at the point of entry rather than repeatedly patching downstream symptoms.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Security",
+    "question": "A non-production test environment needs realistic-looking data without exposing real customer PII. Which technique is most appropriate?",
+    "options": [
+      "Encryption",
+      "Data masking",
+      "Two-factor authentication",
+      "Network segmentation"
+    ],
+    "correct_index": 1,
+    "explanation": "Data masking substitutes sensitive values with realistic but fictional data, well suited to non-production environments where realism is needed without exposing real PII.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Security",
+    "question": "An organization grants access to a sensitive dataset only to users whose role, department, and clearance level jointly satisfy a defined policy, rather than to fixed named roles. This describes:",
+    "options": [
+      "Role-based access control (RBAC) in its simplest form",
+      "Attribute-based access control (ABAC)",
+      "No access control at all",
+      "Mandatory full access for all employees"
+    ],
+    "correct_index": 1,
+    "explanation": "Attribute-based access control evaluates multiple attributes (role, department, clearance, etc.) against policy at access time, offering more granular control than fixed role-based assignment alone.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Security",
+    "question": "What is the fundamental difference between encryption and masking as data protection techniques?",
+    "options": [
+      "They are functionally identical",
+      "Encryption transforms data into ciphertext recoverable with a key, while masking substitutes data with realistic but fictional values typically without a reversible key",
+      "Masking is always more secure than encryption",
+      "Encryption can only be applied to data at rest, never in transit"
+    ],
+    "correct_index": 1,
+    "explanation": "Encryption is reversible with the correct key and protects data in transit or at rest, while masking substitutes values (often irreversibly) primarily to protect realistic-looking data in non-production contexts.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Security",
+    "question": "Which security principle states that users and systems should be granted only the minimum access necessary to perform their required functions?",
+    "options": [
+      "Separation of duties",
+      "Principle of least privilege",
+      "Defense in depth",
+      "Zero trust networking only"
+    ],
+    "correct_index": 1,
+    "explanation": "The principle of least privilege limits access to only what is necessary for a role's function, reducing the risk and impact of accidental or malicious exposure.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Storage & Operations",
+    "question": "A system must be restored to a point no more than 15 minutes before a failure occurred. Which disaster recovery metric defines this requirement?",
+    "options": [
+      "Recovery Time Objective (RTO)",
+      "Recovery Point Objective (RPO)",
+      "Mean Time Between Failures (MTBF)",
+      "Service Level Agreement (SLA) only"
+    ],
+    "correct_index": 1,
+    "explanation": "RPO defines the maximum acceptable amount of data loss measured in time, so a 15-minute requirement is specifically an RPO target.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Storage & Operations",
+    "question": "Adding an index to a frequently filtered column on a large table generally improves query performance by:",
+    "options": [
+      "Forcing a full table scan on every query",
+      "Allowing the database engine to locate matching rows without scanning the entire table",
+      "Automatically normalizing the table",
+      "Permanently sorting the physical table on disk with no other effect"
+    ],
+    "correct_index": 1,
+    "explanation": "An index allows the query engine to look up matching rows directly rather than scanning every row in the table, improving performance for filtered queries.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Storage & Operations",
+    "question": "What is a primary responsibility of a database administrator (DBA) within the Data Storage and Operations knowledge area?",
+    "options": [
+      "Defining business glossary terms",
+      "Performance tuning, capacity planning, and backup/recovery administration for stored data",
+      "Writing the organization's data governance charter",
+      "Approving data quality rule definitions"
+    ],
+    "correct_index": 1,
+    "explanation": "DBAs are responsible for the operational health of stored data, including performance tuning, capacity planning, and backup/recovery, distinct from governance or quality rule ownership.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Storage & Operations",
+    "question": "Which backup strategy captures only the data that has changed since the last full backup, every time it runs?",
+    "options": [
+      "Full backup",
+      "Differential backup",
+      "Incremental backup, in the most common implementation, captures changes since the last backup of any type",
+      "Snapshot backup only"
+    ],
+    "correct_index": 1,
+    "explanation": "A differential backup captures all changes since the last full backup (growing each time), distinguishing it from incremental backups which typically capture changes since the last backup of any type.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Warehousing & BI",
+    "question": "A dimension table needs to preserve a customer's full address history rather than overwrite it on every change. Which slowly changing dimension (SCD) type supports this?",
+    "options": [
+      "Type 1",
+      "Type 2",
+      "No SCD type supports historical tracking",
+      "Type 0 only"
+    ],
+    "correct_index": 1,
+    "explanation": "Type 2 slowly changing dimensions create a new row for each change, preserving full historical values rather than overwriting them as Type 1 does.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Warehousing & BI",
+    "question": "Inmon's approach to data warehouse design is best characterized as:",
+    "options": [
+      "Building dimensional data marts first, then integrating them via conformed dimensions",
+      "Building a normalized, enterprise-wide warehouse first, then deriving dimensional marts from it",
+      "Avoiding any normalization entirely",
+      "Skipping the data warehouse and querying source systems directly"
+    ],
+    "correct_index": 1,
+    "explanation": "Inmon's top-down approach builds a normalized, enterprise-wide warehouse first, with dimensional marts derived from it afterward, contrasting with Kimball's bottom-up, mart-first approach.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Warehousing & BI",
+    "question": "What is the primary structural difference between a star schema and a snowflake schema?",
+    "options": [
+      "A snowflake schema further normalizes dimension tables into related sub-tables, while a star schema keeps dimensions denormalized",
+      "A star schema has no fact table at all",
+      "A snowflake schema cannot be queried by BI tools",
+      "They are identical in every respect"
+    ],
+    "correct_index": 0,
+    "explanation": "A snowflake schema normalizes dimension tables into additional related tables, while a star schema keeps each dimension as a single denormalized table directly joined to the fact table.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Warehousing & BI",
+    "question": "Which type of system is optimized for fast, frequent, transactional writes such as processing a customer order?",
+    "options": [
+      "OLAP",
+      "OLTP",
+      "A data warehouse star schema",
+      "A reference data repository"
+    ],
+    "correct_index": 1,
+    "explanation": "OLTP (Online Transaction Processing) systems are optimized for fast, frequent write operations like order processing, in contrast to OLAP systems optimized for analytical queries.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "DMBOK Framework",
+    "question": "How does DAMA-DMBOK generally define 'data management' as a discipline?",
+    "options": [
+      "As a single department's exclusive technical responsibility",
+      "As the development, execution, and supervision of plans, policies, and practices that deliver, control, protect, and enhance the value of data and information assets throughout their lifecycle",
+      "As only the act of backing up databases",
+      "As a synonym for software development"
+    ],
+    "correct_index": 1,
+    "explanation": "DMBOK defines data management broadly as the planning, execution, and oversight of practices that protect and enhance the value of data assets across their full lifecycle, not a narrow technical task.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "DMBOK Framework",
+    "question": "How does DAMA-DMBOK typically relate to other enterprise frameworks such as TOGAF or ITIL?",
+    "options": [
+      "DMBOK explicitly forbids any use of other frameworks",
+      "DMBOK is generally viewed as complementary, focusing specifically on data management practices while frameworks like TOGAF or ITIL address broader enterprise architecture or IT service management",
+      "DMBOK replaces the need for any IT service management practices",
+      "There is no meaningful relationship between DMBOK and other frameworks"
+    ],
+    "correct_index": 1,
+    "explanation": "DMBOK is generally treated as complementary to broader frameworks, focusing specifically on data management while frameworks like TOGAF (architecture) or ITIL (IT service management) cover adjacent concerns.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "DMBOK Framework",
+    "question": "How many knowledge areas does the DAMA-DMBOK framework define, as tested on the CDMP Fundamentals exam?",
+    "options": [
+      "7",
+      "10",
+      "14",
+      "20"
+    ],
+    "correct_index": 2,
+    "explanation": "DAMA-DMBOK defines 14 knowledge areas, all of which are covered by the CDMP Fundamentals exam.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "DMBOK Framework",
+    "question": "The same 100-question CDMP Fundamentals exam supports which three credential tiers, distinguished only by score threshold?",
+    "options": [
+      "Bronze, Silver, Gold",
+      "Associate (60%), Practitioner (70%), Master (80%)",
+      "Beginner, Intermediate, Expert",
+      "Trainee, Certified, Senior"
+    ],
+    "correct_index": 1,
+    "explanation": "The same exam content supports Associate (60% pass), Practitioner (70%), and Master (80%) tiers, with the credential awarded depending purely on the score achieved.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Document & Content Management",
+    "question": "A records retention and disposition policy primarily serves to:",
+    "options": [
+      "Ensure records are kept forever regardless of legal requirements",
+      "Define how long content must be retained for legal/business needs and when it should be securely disposed of",
+      "Replace the need for any data classification",
+      "Apply only to physical paper documents"
+    ],
+    "correct_index": 1,
+    "explanation": "Retention and disposition policies define required retention periods (for legal, regulatory, or business reasons) and the process for secure disposal once that period ends.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Document & Content Management",
+    "question": "Version control for a shared policy document primarily helps an organization to:",
+    "options": [
+      "Guarantee the document is never edited again",
+      "Track changes over time and allow rollback to or comparison with prior versions",
+      "Eliminate the need for access controls",
+      "Automatically translate the document into other languages"
+    ],
+    "correct_index": 1,
+    "explanation": "Version control tracks the history of changes to a document, enabling comparison between versions and rollback if needed, which is core to managing content lifecycle.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Document & Content Management",
+    "question": "What is the primary scope of Document and Content Management within DMBOK?",
+    "options": [
+      "Managing only relational database tables",
+      "Managing the lifecycle of unstructured and semi-structured content such as documents, images, and emails",
+      "Managing network firewall rules",
+      "Managing only structured numeric data warehouses"
+    ],
+    "correct_index": 1,
+    "explanation": "Document and Content Management focuses on unstructured and semi-structured content, distinct from the structured, tabular data covered by other knowledge areas like data warehousing.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Document & Content Management",
+    "question": "Which content lifecycle stage involves determining the appropriate storage tier and access controls for a newly created document based on its sensitivity and expected usage?",
+    "options": [
+      "Disposition",
+      "Classification and storage assignment",
+      "Archival deletion",
+      "End-user printing"
+    ],
+    "correct_index": 1,
+    "explanation": "Classifying content and assigning appropriate storage and access controls happens early in the content lifecycle, based on the document's sensitivity and anticipated use.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Metadata Management",
+    "question": "Data lineage information, showing how a report's figures were derived from source systems through transformations, is an example of which kind of metadata?",
+    "options": [
+      "Business metadata only",
+      "Operational/technical metadata documenting data flow and processing history",
+      "Reference data",
+      "Master data"
+    ],
+    "correct_index": 1,
+    "explanation": "Lineage capturing how data moved and transformed through systems is operational/technical metadata, distinct from purely business-meaning metadata.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Metadata Management",
+    "question": "Metadata describing the meaning and business context of a data element, such as its definition and valid value ranges, is classified as which type of metadata?",
+    "options": [
+      "Technical metadata",
+      "Business metadata",
+      "Operational metadata",
+      "Encrypted metadata"
+    ],
+    "correct_index": 1,
+    "explanation": "Business metadata captures the meaning, definitions, and business rules associated with data, as opposed to technical metadata (structure/format) or operational metadata (processing history).",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Metadata Management",
+    "question": "What role does a data catalog typically play in metadata management?",
+    "options": [
+      "It replaces the need for a data governance program",
+      "It provides a searchable inventory of data assets along with their metadata, helping users discover and understand available data",
+      "It only stores network configuration metadata",
+      "It is used exclusively to back up production databases"
+    ],
+    "correct_index": 1,
+    "explanation": "A data catalog provides a searchable inventory of data assets and associated metadata, supporting discovery and understanding of what data exists and what it means.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Metadata Management",
+    "question": "Why is a centralized metadata repository generally preferred over scattered, undocumented metadata across individual teams?",
+    "options": [
+      "It guarantees zero maintenance is ever required",
+      "It provides a consistent, discoverable single source of truth for definitions, lineage, and technical structure across the organization",
+      "It is required by law in all jurisdictions",
+      "It eliminates the need for data governance entirely"
+    ],
+    "correct_index": 1,
+    "explanation": "Centralizing metadata avoids duplicated, inconsistent, or undiscoverable definitions and lineage scattered across teams, supporting a more reliable single source of truth.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Reference & Master Data",
+    "question": "An MDM initiative consolidates three customer records from different systems that refer to the same real-world person into one authoritative record. What is this process called?",
+    "options": [
+      "Reference data standardization",
+      "Entity resolution (matching/merging) producing a golden record",
+      "Data masking",
+      "Schema-on-read"
+    ],
+    "correct_index": 1,
+    "explanation": "Entity resolution identifies records across systems referring to the same real-world entity and consolidates them into a single, trusted golden record.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Reference & Master Data",
+    "question": "What core business problem does Master Data Management primarily address?",
+    "options": [
+      "Slow network bandwidth between data centers",
+      "Inconsistent, duplicated, or conflicting versions of core business entities across multiple systems",
+      "The need for more storage capacity",
+      "Lack of available reporting tools"
+    ],
+    "correct_index": 1,
+    "explanation": "MDM addresses inconsistency, duplication, and conflict among core business entities (like customers or products) spread across multiple systems, by creating a single trusted source.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Reference & Master Data",
+    "question": "Which of the following is the clearest example of reference data, as opposed to master data?",
+    "options": [
+      "A specific customer's full profile record",
+      "A standardized list of country codes used to categorize addresses",
+      "A unique product SKU's full attribute set",
+      "An individual employee's record"
+    ],
+    "correct_index": 1,
+    "explanation": "Reference data consists of standardized value sets (such as country codes) used to categorize other data, distinct from master data which represents core, changeable business entities like specific customers or products.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Reference & Master Data",
+    "question": "Who typically governs changes to an organization's authoritative list of valid product category codes (a reference data set)?",
+    "options": [
+      "Any individual employee, with no oversight",
+      "A designated reference data steward or governance body responsible for that domain",
+      "External customers directly",
+      "No one; reference data is never governed"
+    ],
+    "correct_index": 1,
+    "explanation": "Reference data sets are typically governed by a designated steward or governance body to ensure consistency and prevent unauthorized or conflicting changes.",
+    "difficulty": "medium"
+  }
+]

@@ -1,0 +1,230 @@
+[
+  {
+    "domain_name": "Big Data & Data Science",
+    "question": "What are the 'three Vs' commonly used to define Big Data?",
+    "answer": "Volume (the scale of data), Velocity (the speed at which data is generated and must be processed), and Variety (the range of structured, semi-structured, and unstructured data types).",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Big Data & Data Science",
+    "question": "How does DMBOK frame the relationship between traditional data management and data science?",
+    "answer": "DMBOK treats data science as dependent on strong foundational data management practices (quality, governance, architecture); without trustworthy, well-governed data, data science and machine learning outputs are unreliable regardless of model sophistication.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Architecture",
+    "question": "What is a key difference between an enterprise data model and an application data model?",
+    "answer": "An enterprise data model represents data structures and relationships across the entire organization for shared understanding and integration. An application data model is scoped to a single system's specific implementation needs.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Architecture",
+    "question": "What does Data Architecture define within an organization?",
+    "answer": "The overall structure of data and data-related resources, including models, policies, rules, and standards that govern what data is collected, how it's stored, integrated, and used in support of business strategy.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Architecture",
+    "question": "What is the difference between a conceptual, logical, and physical data architecture?",
+    "answer": "Conceptual describes high-level business concepts and relationships without technical detail. Logical adds structure (entities, attributes, relationships) independent of any specific technology. Physical specifies the actual implementation details for a specific database or platform.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Governance",
+    "question": "What is the difference between a Data Owner and a Data Steward?",
+    "answer": "A Data Owner is typically a senior business leader accountable for a data domain's quality and use, with authority to set policy. A Data Steward is the operational role responsible for day-to-day data quality, definitions, and issue resolution on behalf of the owner.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Governance",
+    "question": "Why does DMBOK recommend governance metrics tied to policy adoption rather than infrastructure metrics?",
+    "answer": "Because governance effectiveness is about behavior and value realization (policy adoption, issue resolution time, steward coverage), not technical infrastructure health (backup counts, CPU utilization), which measure operations rather than governance maturity.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Governance",
+    "question": "What are the three main components of a Data Governance operating model?",
+    "answer": "Organizational structure (councils, committees, roles), policies and standards (rules governing data use), and processes (how decisions get made, issues get escalated, and compliance gets monitored).",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Governance",
+    "question": "What is the primary goal of Data Governance according to DMBOK?",
+    "answer": "To plan, oversee, and control the management and use of data assets, ensuring data is managed as a valuable enterprise asset through clear roles, policies, and accountability rather than left to ad hoc practices.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Integration & Interoperability",
+    "question": "What is the difference between ETL and ELT?",
+    "answer": "ETL (Extract, Transform, Load) transforms data before loading it into the target system. ELT (Extract, Load, Transform) loads raw data first and transforms it within the target system, taking advantage of modern cloud warehouse compute power.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Integration & Interoperability",
+    "question": "What is the difference between data integration patterns: batch, real-time, and event-driven?",
+    "answer": "Batch integration moves data in scheduled bulk transfers. Real-time integration synchronizes data continuously with minimal latency. Event-driven integration triggers data movement in response to specific business events as they occur.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Management Process",
+    "question": "What is a data management maturity model used for?",
+    "answer": "It provides a structured framework to assess an organization's current data management capabilities against defined maturity levels, identifying gaps and prioritizing improvement initiatives.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Management Process",
+    "question": "What does the Data Management Process knowledge area focus on?",
+    "answer": "How to plan, implement, and improve data management practices using formal process frameworks, maturity models, and continuous improvement methods rather than ad hoc activities.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Modeling & Design",
+    "question": "When would you choose a denormalized data model over a normalized one?",
+    "answer": "Denormalization is preferred in analytical/reporting contexts (data warehouses, star schemas) where read performance and query simplicity matter more than write efficiency and storage redundancy, which normalized OLTP systems prioritize.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Modeling & Design",
+    "question": "What is normalization in data modeling, and what is its main goal?",
+    "answer": "Normalization is the process of organizing data to reduce redundancy and improve integrity by dividing data into related tables according to defined normal forms (1NF, 2NF, 3NF, etc.). The main goal is eliminating duplicate data and ensuring consistent updates.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Modeling & Design",
+    "question": "What is the difference between a conceptual, logical, and physical data model?",
+    "answer": "A conceptual model captures business entities and relationships at a high level. A logical model adds normalized structure, keys, and attributes independent of technology. A physical model translates the logical model into an actual database schema with data types, indexes, and constraints.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Modeling & Design",
+    "question": "What is a star schema and what are its core components?",
+    "answer": "A star schema is a dimensional modeling pattern with a central fact table (containing measurable events/metrics) surrounded by dimension tables (containing descriptive attributes like time, product, customer) that provide context for analysis.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Quality",
+    "question": "What is the difference between data quality 'accuracy' and 'validity'?",
+    "answer": "Accuracy measures whether data correctly reflects the real-world value it represents. Validity measures whether data conforms to defined business rules or formats (e.g. a valid date format), regardless of whether it's actually accurate.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Quality",
+    "question": "What is root cause analysis in the context of data quality issue management?",
+    "answer": "A systematic process of identifying the underlying source of a data quality problem (e.g. a faulty data entry process or integration bug) rather than just correcting the symptom, preventing the issue from recurring.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Quality",
+    "question": "What are the six core dimensions of data quality most commonly cited in DMBOK?",
+    "answer": "Completeness, accuracy, consistency, timeliness, validity, and uniqueness. Each dimension measures a different aspect of whether data is fit for its intended use.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Security",
+    "question": "What are the core goals of Data Security management according to DMBOK?",
+    "answer": "Ensuring privacy and confidentiality, maintaining data integrity, and ensuring availability of data to authorized users, while protecting against unauthorized access, misuse, or breach.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Security",
+    "question": "What is the difference between data masking and data encryption?",
+    "answer": "Data masking obscures or substitutes sensitive data with realistic but fictional values (often for non-production environments), while encryption transforms data into unreadable ciphertext that requires a key to decrypt, protecting data in transit or at rest.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Security",
+    "question": "What is the principle of least privilege in data security?",
+    "answer": "Users and systems should be granted only the minimum level of access necessary to perform their required functions, reducing the risk and impact of accidental or malicious data exposure.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Storage & Operations",
+    "question": "What does the Data Storage and Operations knowledge area cover in DMBOK?",
+    "answer": "The design, implementation, and support of stored data to maximize its value, including database technology selection, performance tuning, backup/recovery, capacity planning, and database administration practices.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Storage & Operations",
+    "question": "What is the difference between RPO and RTO in disaster recovery planning?",
+    "answer": "RPO (Recovery Point Objective) defines the maximum acceptable amount of data loss measured in time (how much data you can afford to lose). RTO (Recovery Time Objective) defines the maximum acceptable downtime before systems must be restored.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Warehousing & BI",
+    "question": "What is the difference between Kimball's bottom-up and Inmon's top-down data warehouse design approaches?",
+    "answer": "Kimball's approach builds dimensional data marts first and integrates them via shared conformed dimensions ('bottom-up'). Inmon's approach builds a normalized, enterprise-wide data warehouse first, then derives dimensional data marts from it ('top-down').",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Warehousing & BI",
+    "question": "What is the difference between OLTP and OLAP systems?",
+    "answer": "OLTP (Online Transaction Processing) systems handle real-time transactional operations optimized for fast, frequent writes (e.g. order processing). OLAP (Online Analytical Processing) systems are optimized for complex queries and aggregations over large historical datasets, typically used in data warehouses.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Warehousing & BI",
+    "question": "What is a slowly changing dimension (SCD), and what's the difference between Type 1 and Type 2?",
+    "answer": "A slowly changing dimension tracks how dimension attributes change over time. Type 1 overwrites the old value with no history retained. Type 2 creates a new row preserving the old value, maintaining full historical tracking of changes.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "DMBOK Framework",
+    "question": "What is the DAMA Wheel and what does it represent?",
+    "answer": "A visual model placing Data Governance at the center, surrounded by the other knowledge areas, illustrating that governance touches and coordinates every other data management discipline rather than operating as a separate, isolated function.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "DMBOK Framework",
+    "question": "How many knowledge areas does the CDMP Fundamentals exam cover, and what scoring tiers does the exam use?",
+    "answer": "It covers 14 knowledge areas. The same 100-question exam serves three credential tiers based on score: 60% for Associate, 70% for Practitioner, and 80% for Master.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Document & Content Management",
+    "question": "What is the scope of Document and Content Management in DMBOK?",
+    "answer": "Managing the lifecycle of unstructured and semi-structured data (documents, images, video, emails) including storage, retrieval, retention, and disposal, applying data management discipline beyond traditional structured/relational data.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Document & Content Management",
+    "question": "What is a retention schedule and why is it important in content management?",
+    "answer": "A retention schedule defines how long different types of documents/content must be kept before disposal, balancing legal/regulatory compliance requirements against storage costs and risk of retaining unnecessary sensitive data.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Metadata Management",
+    "question": "What are the three main types of metadata described in DMBOK?",
+    "answer": "Business metadata (definitions, business rules, ownership), technical metadata (data types, schemas, lineage, system details), and operational metadata (job run history, data volumes, error logs from data processing).",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Metadata Management",
+    "question": "What is data lineage and why does it matter for governance and trust?",
+    "answer": "Data lineage tracks the origin, movement, and transformation of data as it flows through systems, enabling users to trace a data point back to its source. It matters because it builds trust, supports impact analysis, and aids regulatory compliance audits.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Metadata Management",
+    "question": "What is the role of a business glossary in metadata management?",
+    "answer": "A business glossary defines key business terms in clear, agreed-upon language, ensuring consistent understanding of terms like 'active customer' or 'net revenue' across departments, reducing ambiguity and miscommunication.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Reference & Master Data",
+    "question": "What is entity resolution (or matching/merging) in the context of Master Data Management?",
+    "answer": "The process of identifying records across different systems that refer to the same real-world entity, despite differences in formatting or completeness, and consolidating them into a single golden record.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Reference & Master Data",
+    "question": "What is the difference between Master Data and Reference Data?",
+    "answer": "Master Data represents core business entities used across multiple systems (customers, products, employees) that change relatively infrequently. Reference Data consists of standardized value sets used to categorize other data (country codes, status codes, currency codes).",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Reference & Master Data",
+    "question": "What problem does Master Data Management (MDM) primarily solve?",
+    "answer": "MDM solves the problem of inconsistent, duplicated, or conflicting versions of core business entities across multiple systems by creating a single, trusted, authoritative source ('golden record') for each entity.",
+    "difficulty": "medium"
+  }
+]

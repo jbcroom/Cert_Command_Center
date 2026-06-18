@@ -1,0 +1,587 @@
+[
+  {
+    "domain_name": "Application Development",
+    "question": "A chatbot needs to maintain context across multiple turns of a conversation within a single session. What must the application manage to support this?",
+    "options": [
+      "Nothing; the model inherently remembers all past sessions",
+      "The conversation history, passed back to the model on each call within the context window",
+      "A separate fine-tuned model per session",
+      "The vector index refresh schedule"
+    ],
+    "correct_index": 1,
+    "explanation": "LLMs are stateless between API calls; the application must explicitly pass prior conversation turns back as context on each new request to maintain multi-turn coherence.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "A developer wants the agent to decide at runtime whether to call a calculator tool, a search tool, or answer directly, based on the user's question. What pattern does this describe?",
+    "options": [
+      "Static prompt templating with no decision logic",
+      "Dynamic tool selection/routing within the agent's reasoning loop",
+      "Fine-tuning a new model per tool",
+      "A single hardcoded if/else outside the model entirely"
+    ],
+    "correct_index": 1,
+    "explanation": "Dynamic tool selection lets the agent's reasoning process decide at runtime which available tool (if any) is appropriate for the current step, rather than following a fixed static script.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "A RAG application occasionally produces confident-sounding but factually incorrect answers not supported by retrieved context. What design choice most directly reduces this risk?",
+    "options": [
+      "Increasing temperature to 2.0",
+      "Instructing the model to answer only from the provided context and to say it doesn't know when the context is insufficient",
+      "Removing the retrieval step entirely",
+      "Disabling logging"
+    ],
+    "correct_index": 1,
+    "explanation": "Explicitly constraining the model to ground its answer in retrieved context, and to acknowledge insufficient context, reduces hallucinated, unsupported claims.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "A retrieval query for 'Q3 revenue' returns poor results because the source documents use the phrase 'third quarter earnings' instead. What technique would most directly help?",
+    "options": [
+      "Increasing chunk size only",
+      "Query rewriting/expansion to generate semantically related query variants before retrieval",
+      "Lowering the LLM's temperature",
+      "Disabling re-ranking"
+    ],
+    "correct_index": 1,
+    "explanation": "Query rewriting or expansion generates alternative phrasings of the query, helping bridge vocabulary mismatches between how a user asks and how source documents are worded.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "A user asks a multi-step math word problem and the model gives a wrong final answer despite knowing the relevant facts. Which prompting technique is most likely to improve accuracy?",
+    "options": [
+      "Reducing the prompt to a single word",
+      "Chain-of-thought prompting, asking the model to reason step by step before giving a final answer",
+      "Increasing the temperature to 1.5",
+      "Removing the system prompt entirely"
+    ],
+    "correct_index": 1,
+    "explanation": "Chain-of-thought prompting encourages the model to work through intermediate reasoning steps explicitly, which often improves accuracy on multi-step problems.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "An agent needs to call an external weather API as part of answering a user's question. What architectural feature enables this?",
+    "options": [
+      "Increasing the model's temperature",
+      "Function/tool calling, where the model can invoke a defined function and incorporate its result",
+      "Switching to a smaller embedding model",
+      "Disabling the system prompt"
+    ],
+    "correct_index": 1,
+    "explanation": "Function (tool) calling lets the model invoke external functions or APIs and incorporate the structured results into its response, rather than relying solely on its trained knowledge.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "An application enforces that the LLM's output must be valid JSON matching a specific schema for downstream parsing. What is the most reliable way to achieve this?",
+    "options": [
+      "Hope the model produces correct JSON based on a vague instruction",
+      "Use structured output / schema-constrained generation features supported by the serving endpoint",
+      "Always post-process plain text with regular expressions only",
+      "Increase the temperature to encourage variety"
+    ],
+    "correct_index": 1,
+    "explanation": "Structured output or schema-constrained generation features enforce that the model's output conforms to a defined schema, which is far more reliable than hoping a free-text instruction is followed.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "An application repeatedly hits the LLM's context window limit when including long retrieved documents plus conversation history. What is a reasonable mitigation?",
+    "options": [
+      "Always use the largest available model regardless of cost",
+      "Summarize or truncate older conversation turns and trim retrieved context to the most relevant chunks",
+      "Disable retrieval entirely",
+      "Switch the embedding model to a larger one"
+    ],
+    "correct_index": 1,
+    "explanation": "Summarizing or trimming older history and limiting retrieved context to the most relevant chunks reduces token usage to fit within the context window while preserving the most useful information.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "Lowering the temperature parameter on an LLM call has what general effect on output?",
+    "options": [
+      "Output becomes more random and creative",
+      "Output becomes more deterministic and focused, reducing variability across repeated calls",
+      "It has no effect on output, only on latency",
+      "It increases the model's context window"
+    ],
+    "correct_index": 1,
+    "explanation": "Lower temperature reduces randomness in token sampling, producing more deterministic, focused output, which is often desirable for factual or structured tasks.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "What is the main purpose of a well-designed system prompt in an agent application?",
+    "options": [
+      "To replace the need for any retrieval step",
+      "To set persistent behavior, tone, and constraints for the model that apply consistently across the conversation, separate from per-turn user input",
+      "To store the conversation history permanently in the database",
+      "To define the Vector Search index schema"
+    ],
+    "correct_index": 1,
+    "explanation": "A system prompt establishes persistent instructions, tone, and constraints that shape the model's behavior across the whole interaction, distinct from the user's per-turn messages.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "Which Databricks capability is most directly used to serve a foundation model (e.g., Llama or DBRX) for low-latency, interactive inference within an application?",
+    "options": [
+      "Mosaic AI Model Serving",
+      "Unity Catalog audit logs",
+      "Lakeflow Spark Declarative Pipelines",
+      "Databricks Asset Bundles"
+    ],
+    "correct_index": 0,
+    "explanation": "Mosaic AI Model Serving provides managed, low-latency endpoints for serving foundation and custom models for real-time, interactive inference.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "Which prompting technique explicitly shows the model several input/output examples within the prompt to guide its behavior on a new, similar input?",
+    "options": [
+      "Zero-shot prompting",
+      "Few-shot prompting",
+      "Chain-of-thought prompting",
+      "Temperature tuning"
+    ],
+    "correct_index": 1,
+    "explanation": "Few-shot prompting includes example input/output pairs directly in the prompt to demonstrate the desired behavior before the model handles the new input.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "Why is embedding model choice consistency important between indexing time and query time in a RAG system?",
+    "options": [
+      "It isn't important; any embedding model can be swapped freely at any time",
+      "Query and document embeddings must live in the same vector space for similarity comparisons to be meaningful",
+      "Only the LLM's embedding matters, not the documents'",
+      "Embedding models only affect storage cost, not retrieval accuracy"
+    ],
+    "correct_index": 1,
+    "explanation": "Similarity search relies on query and document vectors existing in the same embedding space; switching embedding models without re-embedding the corpus breaks that consistency and degrades retrieval quality.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Application Development",
+    "question": "Why might a hybrid search approach (combining keyword/BM25 search with vector similarity search) outperform pure vector search alone for some RAG use cases?",
+    "options": [
+      "Hybrid search is always slower and therefore better",
+      "It captures exact keyword matches (e.g., product codes, acronyms) that pure semantic similarity might miss, while still benefiting from semantic matching",
+      "Vector search cannot return any results without keyword search",
+      "It removes the need for chunking"
+    ],
+    "correct_index": 1,
+    "explanation": "Hybrid search combines lexical matching (good for exact terms, codes, acronyms) with semantic vector similarity, often improving recall over either approach alone.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "A Databricks App needs to call a Mosaic AI Agent endpoint on behalf of authenticated end users. What is the recommended approach for securing this call?",
+    "options": [
+      "Embed long-lived API keys directly in browser-side JavaScript",
+      "Route the call through the app's backend, enforcing user identity and permissions via the app's authenticated context",
+      "Disable authentication for simplicity",
+      "Hardcode a shared service account password in the front-end"
+    ],
+    "correct_index": 1,
+    "explanation": "Routing calls through the backend and enforcing identity/permissions there avoids exposing long-lived credentials in client-side code, which is a security risk.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "A GenAI application's response quality degrades after a routine reindex of the Vector Search index. What deployment practice would have caught this before it reached production users?",
+    "options": [
+      "Skipping testing to deploy faster",
+      "Running automated evaluation against a held-out test set as part of the deployment pipeline before promoting to production",
+      "Disabling the index entirely",
+      "Increasing the model's temperature"
+    ],
+    "correct_index": 1,
+    "explanation": "Running automated evaluation as a gate in the CI/CD pipeline, before promoting a change to production, would surface a quality regression caused by a reindex before users are affected.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "A team needs to apply a model to score millions of rows already sitting in a Delta table, with no requirement for real-time response. Which approach is most appropriate?",
+    "options": [
+      "A real-time Model Serving endpoint hit row-by-row",
+      "ai_query() for batch inference within SQL or a pipeline",
+      "A chat-based agent endpoint",
+      "A Databricks App with a synchronous UI"
+    ],
+    "correct_index": 1,
+    "explanation": "ai_query() is designed for applying a model across many rows in a batch context within SQL or a pipeline, rather than for low-latency, one-at-a-time interactive requests.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "An external, third-party MCP server requires an API key to connect. Where should that credential be stored when wiring it into a Databricks agent?",
+    "options": [
+      "Hardcoded directly into the agent's notebook source code",
+      "In a Databricks secret scope, referenced securely at runtime rather than stored in plaintext",
+      "Shared via a public Slack channel for convenience",
+      "Embedded in the Vector Search index"
+    ],
+    "correct_index": 1,
+    "explanation": "Databricks secret scopes provide secure storage and runtime access for credentials like API keys, avoiding hardcoded plaintext secrets in source code.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "What distinguishes a managed MCP server from a custom MCP server in the context of agent tool integration?",
+    "options": [
+      "A managed MCP server is provided and maintained by Databricks for common data sources, while a custom one is built in-house to wrap proprietary resources",
+      "There is no difference; the terms are interchangeable",
+      "Managed MCP servers cannot be used with agents",
+      "Custom MCP servers must always be hosted by a third party"
+    ],
+    "correct_index": 0,
+    "explanation": "A managed MCP server is provided and maintained by Databricks for common sources, an external one is run by a third party, and a custom one is built in-house to wrap specific internal resources.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "What is a key benefit of deploying a GenAI front-end as a Databricks App rather than a fully external web service?",
+    "options": [
+      "It removes the need for any backend logic",
+      "It can run within the Databricks-governed environment, simplifying integration with Unity Catalog permissions and internal endpoints",
+      "It guarantees zero latency for all requests",
+      "It eliminates the need for a Model Serving endpoint"
+    ],
+    "correct_index": 1,
+    "explanation": "Databricks Apps run within the platform's governed environment, making it easier to integrate with Unity Catalog permissions and internal Model Serving endpoints without building separate external infrastructure.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "What is the recommended way to manage prompt template versions across dev, staging, and production with the ability to roll back?",
+    "options": [
+      "Overwrite the same text file in place on every deployment",
+      "Track prompts as MLflow versions and promote them using aliases",
+      "Store prompts only as inline string literals scattered across the codebase",
+      "Email the latest prompt text to the team before each deploy"
+    ],
+    "correct_index": 1,
+    "explanation": "Tracking prompts as MLflow versions and promoting via aliases preserves full version history and supports rollback, unlike overwriting a file or table in place.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "Which CI/CD practice is specific to deploying GenAI agent applications, beyond standard software CI/CD?",
+    "options": [
+      "Updating Vector Search indexes as part of the deployment process",
+      "Compiling code to a binary executable",
+      "Disabling all automated tests before production release",
+      "Avoiding version control for prompt templates"
+    ],
+    "correct_index": 0,
+    "explanation": "Because retrieval quality depends on the freshness of the index, updating Vector Search indexes during deployment is a GenAI-specific CI/CD concern beyond typical application deployment steps.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "Which factors should determine whether a Vector Search index uses standard versus storage-optimized configuration?",
+    "options": [
+      "Only the programming language used by the client application",
+      "The number of embeddings, update frequency, latency requirements, and cost constraints",
+      "The time zone of the Databricks workspace",
+      "Whether the workspace uses Unity Catalog at all"
+    ],
+    "correct_index": 1,
+    "explanation": "Scale of embeddings, how often the index needs refreshing, latency needs, and cost together determine the right Vector Search configuration, including whether hybrid search and reranking should be enabled.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Assembling and Deploying Applications",
+    "question": "Why would a team test individual chain or agent components in isolation before running full integrated tests?",
+    "options": [
+      "Isolated component testing is never useful for agents",
+      "It helps pinpoint which specific step (retrieval, a tool call, the LLM call) is responsible for a failure before debugging the entire pipeline",
+      "It replaces the need for any production monitoring",
+      "It is required only for batch inference, never for real-time agents"
+    ],
+    "correct_index": 1,
+    "explanation": "Testing components in isolation makes it easier to localize the source of a failure, rather than having to debug an entire multi-step chain at once.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "A document corpus contains scanned, image-based receipts (.jpeg files) that need text extracted before chunking. Which Python tool is purpose-built for this?",
+    "options": [
+      "beautifulsoup",
+      "pytesseract",
+      "scrapy",
+      "pyquery"
+    ],
+    "correct_index": 1,
+    "explanation": "pytesseract wraps the Tesseract OCR engine and is built for extracting text from images, unlike beautifulsoup/scrapy/pyquery which target HTML/web content parsing.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "After an initial vector similarity search returns 50 candidate chunks, a re-ranking step is applied before passing the top 5 to the LLM. What is the purpose of re-ranking?",
+    "options": [
+      "To delete irrelevant chunks from the source table permanently",
+      "To reorder candidates using a more precise (often more expensive) model so the most relevant results rise to the top",
+      "To generate new embeddings for the query",
+      "To compress the chunks into a smaller file size"
+    ],
+    "correct_index": 1,
+    "explanation": "Re-ranking takes the fast-but-approximate initial candidate set and reorders it with a more accurate model, improving the relevance of what's ultimately passed to the LLM.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "What is the typical sequence for preparing source documents to be used in a Databricks-based RAG pipeline?",
+    "options": [
+      "Generate embeddings, then extract and clean text, then chunk",
+      "Extract and clean source content, apply a chunking strategy, generate embeddings if needed, then write to a Unity Catalog-governed Delta table",
+      "Write raw PDFs directly into Vector Search with no preprocessing",
+      "Skip chunking and embed entire documents as single vectors"
+    ],
+    "correct_index": 1,
+    "explanation": "The standard pipeline is extract/clean, chunk, embed, then persist into a governed Delta table so Vector Search can index it; skipping steps or reordering them undermines retrieval quality and governance.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "When choosing a chunk size for a RAG pipeline over dense, technical engineering specifications, what is the most important consideration?",
+    "options": [
+      "Always use the largest chunk size possible regardless of content",
+      "Balance the document's structural granularity and the embedding model's context limits against retrieval precision, often favoring smaller chunks with overlap for dense technical text",
+      "Chunk size never affects retrieval quality",
+      "Use exactly one chunk per document regardless of length"
+    ],
+    "correct_index": 1,
+    "explanation": "Dense technical content often benefits from smaller chunks with overlap to preserve precision, since cramming too much dense material into one chunk can dilute relevance during retrieval.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "Which metrics are most appropriate for evaluating whether a retriever is surfacing the right documents before they're passed to the LLM?",
+    "options": [
+      "BLEU and ROUGE only",
+      "precision@k and recall@k",
+      "Model serving endpoint latency only",
+      "Token cost per request"
+    ],
+    "correct_index": 1,
+    "explanation": "precision@k and recall@k directly measure whether the right documents are being surfaced among the top-k retrieved results, which is the retrieval stage's core concern.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Data Preparation",
+    "question": "Why should boilerplate content like navigation menus and footers be filtered out before generating embeddings for a RAG knowledge base?",
+    "options": [
+      "It has no effect on retrieval quality",
+      "It dilutes the embedding space and can be retrieved instead of substantive content, degrading answer relevance",
+      "It increases storage costs only, not quality",
+      "Filtering it out is required by Unity Catalog governance policy"
+    ],
+    "correct_index": 1,
+    "explanation": "Boilerplate and duplicate content can pollute the embedding space, sometimes getting retrieved over genuinely relevant content and lowering the quality of generated answers.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Design Applications",
+    "question": "A solution requires multiple specialized agents (billing, technical support, account management) coordinated to handle a single customer query end-to-end. Which design pattern fits?",
+    "options": [
+      "A single agent with a very long system prompt covering all domains",
+      "A Multiagent Supervisor that routes to and synthesizes responses from specialized sub-agents",
+      "Information Extraction with multiple output schemas",
+      "Increasing the context window of one agent"
+    ],
+    "correct_index": 1,
+    "explanation": "A Multiagent Supervisor pattern coordinates specialized sub-agents, each handling a distinct domain, and synthesizes their outputs rather than relying on one overloaded agent.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Design Applications",
+    "question": "A team is deciding between prompt engineering, RAG, and fine-tuning for a use case where the underlying knowledge changes weekly. Which approach is generally most maintainable for this requirement?",
+    "options": [
+      "Fine-tuning, retrained weekly",
+      "RAG, since the retrieval index can be refreshed without retraining the model",
+      "Prompt engineering alone with no external data",
+      "None of these approaches support changing knowledge"
+    ],
+    "correct_index": 1,
+    "explanation": "RAG separates knowledge (in a refreshable index) from the model's weights, so frequently changing information can be kept current by updating the index rather than retraining the model.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Design Applications",
+    "question": "A team needs an application that answers employee questions grounded strictly in the company's internal HR policy documents. Which Agent Bricks capability is the most direct fit?",
+    "options": [
+      "Multiagent Supervisor",
+      "Knowledge Assistant",
+      "Information Extraction",
+      "A standalone prompt-engineered chatbot with no retrieval"
+    ],
+    "correct_index": 1,
+    "explanation": "Knowledge Assistant is purpose-built for grounded Q&A over a specific knowledge base or document set, which matches answering questions from internal HR policy documents.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Design Applications",
+    "question": "A use case requires pulling structured fields like invoice number, vendor, and total amount out of scanned PDF invoices. Which Agent Bricks tool best fits this task?",
+    "options": [
+      "Information Extraction",
+      "Multiagent Supervisor",
+      "Knowledge Assistant",
+      "A general-purpose RAG chatbot"
+    ],
+    "correct_index": 0,
+    "explanation": "Information Extraction is designed for pulling structured data (fields, entities, values) out of unstructured documents, which fits invoice field extraction.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Design Applications",
+    "question": "When designing multi-stage reasoning for an agent that must search a knowledge base, then calculate a value, then format a response, what design decision most affects whether the agent succeeds?",
+    "options": [
+      "The color scheme of the front-end UI",
+      "Defining which tools are available and the order in which they should be invoked",
+      "The cloud region the workspace is deployed in",
+      "The number of users licensed for the workspace"
+    ],
+    "correct_index": 1,
+    "explanation": "Specifying which tools the agent can call and the sequence in which they should be invoked directly affects whether the agent has the right context before later steps.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Design Applications",
+    "question": "Which scenario is the weakest fit for a single-agent architecture, making a multi-agent design preferable?",
+    "options": [
+      "Answering FAQ-style questions from one document set",
+      "Extracting one field type from a consistent document template",
+      "Orchestrating distinct expertise across legal review, financial analysis, and technical compliance for one complex request",
+      "Summarizing a single short document"
+    ],
+    "correct_index": 2,
+    "explanation": "When a task spans genuinely distinct domains of expertise that benefit from specialized handling and synthesis, a multi-agent supervisor pattern is preferable to forcing one agent to cover everything.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "A production RAG application's average response quality, measured weekly, has been gradually declining even though no code changes were deployed. What is the most likely explanation to investigate first?",
+    "options": [
+      "The model's temperature setting was never changed, so nothing could be wrong",
+      "Underlying data or document drift in the knowledge base, or a shift in the distribution of user queries",
+      "Evaluation metrics are inherently unreliable and should be ignored",
+      "The Vector Search index is incapable of degrading over time"
+    ],
+    "correct_index": 1,
+    "explanation": "Even without code changes, drift in the underlying knowledge base content or in the kinds of questions users ask can degrade real-world quality over time, which monitoring is meant to catch.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "A team wants human subject-matter experts to score agent responses consistently, rather than getting inconsistent ad hoc opinions. What should they do first?",
+    "options": [
+      "Skip rubrics and let each SME score however they prefer",
+      "Define clear evaluation rubrics and calibrate SMEs on those criteria before scoring",
+      "Only use an LLM-as-judge with no human review at all",
+      "Average wildly inconsistent ratings without reconciliation"
+    ],
+    "correct_index": 1,
+    "explanation": "Defining clear rubrics and calibrating SMEs on those criteria first produces consistent, comparable ratings, rather than averaging scores that reflect inconsistent individual standards.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "Which Databricks tool is most directly used to run structured evaluation of a GenAI application's outputs against defined metrics?",
+    "options": [
+      "mlflow.genai.evaluate()",
+      "Lakeflow Spark Declarative Pipelines",
+      "Databricks Asset Bundles",
+      "AI Gateway rate limiting rules"
+    ],
+    "correct_index": 0,
+    "explanation": "mlflow.genai.evaluate() provides a structured framework for running evaluation of GenAI outputs against defined metrics, including custom and LLM-judge-based scorers.",
+    "difficulty": "easy"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "Which set of metrics would a production monitoring dashboard for a deployed GenAI agent most usefully track together?",
+    "options": [
+      "Only the number of GitHub commits made that week",
+      "Latency, cost per request, and output quality/drift indicators",
+      "The font size used in the front-end UI",
+      "The number of Unity Catalog schemas in the workspace"
+    ],
+    "correct_index": 1,
+    "explanation": "Tracking latency, cost, and quality/drift together gives a holistic operational view of a deployed GenAI application's health, rather than any single dimension alone.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Evaluation and Monitoring",
+    "question": "Why should retrieval quality and generation quality typically be evaluated as separate concerns in a RAG pipeline?",
+    "options": [
+      "They are always perfectly correlated, so separate evaluation is redundant",
+      "A good answer can still result from poor retrieval by chance, and a bad answer can occur despite excellent retrieval, so isolating each stage clarifies where to focus improvement",
+      "Only generation quality can be measured at all",
+      "Retrieval quality cannot be measured with any metric"
+    ],
+    "correct_index": 1,
+    "explanation": "Separating retrieval evaluation (precision@k, recall@k) from generation evaluation (faithfulness, relevance) clarifies which stage of the pipeline needs improvement when overall quality is unsatisfactory.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Governance",
+    "question": "A guardrail needs to prevent a model from echoing a customer's full credit card number back in its response, even if it appears in retrieved context. What technique addresses this?",
+    "options": [
+      "Increasing the model's context window",
+      "Applying masking to redact or obscure sensitive patterns like card numbers before or after model processing",
+      "Disabling logging",
+      "Switching to a larger foundation model"
+    ],
+    "correct_index": 1,
+    "explanation": "Masking techniques redact or obscure sensitive data patterns to meet data protection objectives, preventing sensitive values from being exposed in model input or output.",
+    "difficulty": "medium"
+  },
+  {
+    "domain_name": "Governance",
+    "question": "A RAG application must prevent low-privilege users from retrieving chunks sourced from confidential HR documents, even if those chunks are semantically relevant to their query. What should govern this?",
+    "options": [
+      "Relying solely on the LLM's system prompt to refuse",
+      "Row-level or document-level access control enforced through Unity Catalog before retrieval, not just prompt instructions",
+      "Increasing the chunk size",
+      "Disabling Vector Search entirely"
+    ],
+    "correct_index": 1,
+    "explanation": "Access control should be enforced at the data layer (Unity Catalog permissions) before retrieval, since relying on the LLM to self-censor in the prompt is not a reliable security boundary.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Governance",
+    "question": "An organization wants a complete, auditable record of which agent version, prompt version, and data version produced a given production response. What Databricks capability most directly supports this?",
+    "options": [
+      "Unity Catalog lineage and MLflow tracking/versioning together",
+      "A static README file updated manually",
+      "Disabling versioning to simplify the system",
+      "Relying on user memory of what changed"
+    ],
+    "correct_index": 0,
+    "explanation": "Unity Catalog lineage combined with MLflow's tracking and versioning of models, prompts, and data gives an auditable trail connecting a production response back to the exact components that produced it.",
+    "difficulty": "hard"
+  },
+  {
+    "domain_name": "Governance",
+    "question": "What is the primary purpose of an AI Gateway in front of a Model Serving endpoint?",
+    "options": [
+      "To replace the need for Unity Catalog entirely",
+      "To centrally enforce policies like rate limiting, guardrails, and request/response logging across model traffic",
+      "To automatically retrain the model nightly",
+      "To generate chunking strategies for new documents"
+    ],
+    "correct_index": 1,
+    "explanation": "An AI Gateway sits in front of model endpoints to centrally apply governance policies such as rate limiting, content guardrails, and consistent logging across all traffic to that model.",
+    "difficulty": "medium"
+  }
+]

@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate-env": "node scripts/validate-env.js",
+    "validate-content": "node scripts/validate-content.js",
+    "migrate": "node scripts/migrate.js",
+    "seed": "node scripts/seed.js",
+    "setup": "node scripts/setup.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.108.2",
@@ -21,6 +26,7 @@
     "recharts": "^3.8.1"
   },
   "devDependencies": {
+    "@inquirer/prompts": "^7.5.2",
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

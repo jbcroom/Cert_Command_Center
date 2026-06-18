@@ -79,7 +79,7 @@ export default function NotificationBell() {
     <div className="relative" ref={panelRef}>
       <button
         onClick={openPanel}
-        className="flex items-center gap-2 w-full px-3 py-2 rounded-md text-sm text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"
+        className="flex items-center gap-2 w-full px-3 py-2 min-h-[44px] rounded-md text-sm text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"
         title="Notifications"
       >
         <div className="relative">
@@ -102,7 +102,7 @@ export default function NotificationBell() {
         <div className="absolute bottom-full left-0 mb-2 w-80 bg-bg-surface border border-bg-elevated rounded-xl shadow-2xl z-50 max-h-96 flex flex-col">
           <div className="flex items-center justify-between px-4 py-3 border-b border-bg-elevated flex-shrink-0">
             <h3 className="text-sm font-semibold text-text-primary">Notifications</h3>
-            <button onClick={() => setOpen(false)} className="text-text-muted hover:text-text-primary">
+            <button onClick={() => setOpen(false)} className="h-8 w-8 flex items-center justify-center text-text-muted hover:text-text-primary rounded transition-colors">
               <X size={14} />
             </button>
           </div>
@@ -126,12 +126,12 @@ export default function NotificationBell() {
                   <div className="flex flex-col gap-1 flex-shrink-0">
                     {n.cert_id && (
                       <button onClick={() => handleClick(n)}
-                        className="text-text-muted hover:text-accent-blue transition-colors">
+                        className="h-8 w-8 flex items-center justify-center text-text-muted hover:text-accent-blue rounded transition-colors">
                         <ExternalLink size={12} />
                       </button>
                     )}
                     <button onClick={() => dismiss(n.id)}
-                      className="text-text-muted hover:text-danger transition-colors">
+                      className="h-8 w-8 flex items-center justify-center text-text-muted hover:text-danger rounded transition-colors">
                       <X size={12} />
                     </button>
                   </div>

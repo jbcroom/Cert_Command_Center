@@ -69,18 +69,18 @@ function MarkdownContent({ content }) {
     } else if (line.match(/^\d+\.\s/)) {
       const items = []
       while (i < lines.length && lines[i].match(/^\d+\.\s/)) {
-        items.push(<li key={i} className="text-sm text-text-primary leading-relaxed">{lines[i].replace(/^\d+\.\s/, '')}</li>)
+        items.push(<li key={i} className="text-sm text-text-primary leading-loose">{lines[i].replace(/^\d+\.\s/, '')}</li>)
         i++
       }
-      elements.push(<ol key={`ol-${i}`} className="list-decimal list-inside space-y-1.5 my-2">{items}</ol>)
+      elements.push(<ol key={`ol-${i}`} className="list-decimal ml-5 space-y-1.5 my-3">{items}</ol>)
       continue
     } else if (line.startsWith('- ') || line.startsWith('* ')) {
       const items = []
       while (i < lines.length && (lines[i].startsWith('- ') || lines[i].startsWith('* '))) {
-        items.push(<li key={i} className="text-sm text-text-primary leading-relaxed">{lines[i].slice(2)}</li>)
+        items.push(<li key={i} className="text-sm text-text-primary leading-loose">{lines[i].slice(2)}</li>)
         i++
       }
-      elements.push(<ul key={`ul-${i}`} className="list-disc list-inside space-y-1 my-2 pl-1">{items}</ul>)
+      elements.push(<ul key={`ul-${i}`} className="list-disc ml-5 space-y-1 my-3">{items}</ul>)
       continue
     } else if (line.trim()) {
       const rendered = line
@@ -88,13 +88,13 @@ function MarkdownContent({ content }) {
         .replace(/\*(.+?)\*/g, '<em>$1</em>')
         .replace(/`(.+?)`/g, '<code class="bg-bg-elevated px-1 py-0.5 rounded text-accent-teal text-xs font-mono">$1</code>')
       elements.push(
-        <p key={i} className="text-sm text-text-primary leading-relaxed"
+        <p key={i} className="text-sm text-text-primary leading-loose"
           dangerouslySetInnerHTML={{ __html: rendered }} />
       )
     }
     i++
   }
-  return <div className="space-y-2">{elements}</div>
+  return <div className="space-y-3">{elements}</div>
 }
 
 function SectionBlock({ section, certId, domainName, onRegenerated }) {

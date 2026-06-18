@@ -51,7 +51,7 @@ export default function TopBar({ cert, onLogSession, onEdit, onReschedule, onArc
         {cert && (
           <button
             onClick={onLogSession}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm bg-accent-blue/10 text-accent-blue hover:bg-accent-blue/20 transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] rounded-md text-sm bg-accent-blue/10 text-accent-blue hover:bg-accent-blue/20 transition-colors"
           >
             <Clock size={14} />
             Log Session
@@ -62,7 +62,7 @@ export default function TopBar({ cert, onLogSession, onEdit, onReschedule, onArc
           <div className="relative" ref={menuRef}>
             <button
               onClick={() => setMenuOpen(o => !o)}
-              className="p-1.5 rounded-md text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"
+              className="h-11 w-11 flex items-center justify-center rounded-md text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"
             >
               <MoreHorizontal size={18} />
             </button>

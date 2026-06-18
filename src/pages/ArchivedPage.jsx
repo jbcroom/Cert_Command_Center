@@ -63,7 +63,7 @@ export default function ArchivedPage({ onRestore }) {
   return (
     <>
       <TopBar />
-      <main className="flex-1 overflow-y-auto p-6">
+      <main className="flex-1 overflow-y-auto px-4 py-4 md:px-6 md:py-6 pb-24 md:pb-6">
         <div className="max-w-3xl mx-auto space-y-6">
           <div>
             <h1 className="text-xl font-bold text-text-primary">Archived Certifications</h1>

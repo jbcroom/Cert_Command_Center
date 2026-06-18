@@ -23,8 +23,8 @@ function CardRow({ card, onEdit, onDelete }) {
       </td>
       <td className="py-2.5 px-3">
         <div className="flex items-center gap-2">
-          <button onClick={() => onEdit(card)} className="text-text-muted hover:text-text-primary transition-colors"><Pencil size={13} /></button>
-          <button onClick={() => onDelete(card)} className="text-text-muted hover:text-danger transition-colors"><Trash2 size={13} /></button>
+          <button onClick={() => onEdit(card)} className="h-9 w-9 flex items-center justify-center rounded text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"><Pencil size={13} /></button>
+          <button onClick={() => onDelete(card)} className="h-9 w-9 flex items-center justify-center rounded text-text-muted hover:text-danger hover:bg-bg-elevated transition-colors"><Trash2 size={13} /></button>
         </div>
       </td>
     </tr>
@@ -79,8 +79,8 @@ function CardForm({ certId, card, onSaved, onCancel }) {
           Active
         </label>
         <div className="flex gap-2">
-          <button type="button" onClick={onCancel} className="px-3 py-1.5 rounded text-xs text-text-muted hover:bg-bg-surface transition-colors">Cancel</button>
-          <button type="submit" disabled={saving} className="px-3 py-1.5 rounded text-xs font-medium bg-accent-blue text-white hover:bg-accent-blue/80 disabled:opacity-50 transition-colors">
+          <button type="button" onClick={onCancel} className="px-3 py-1.5 min-h-[44px] rounded text-xs text-text-muted hover:bg-bg-surface transition-colors">Cancel</button>
+          <button type="submit" disabled={saving} className="px-3 py-1.5 min-h-[44px] rounded text-xs font-medium bg-accent-blue text-white hover:bg-accent-blue/80 disabled:opacity-50 transition-colors">
             {saving ? 'Saving…' : card ? 'Update' : 'Add Card'}
           </button>
         </div>
@@ -210,9 +210,9 @@ function GeneratePanel({ cert, flashcards, onSaved, onClose }) {
             </div>
           ))}
           <div className="flex gap-2 justify-end pt-1">
-            <button onClick={() => setPreview(null)} className="px-3 py-1.5 rounded text-xs text-text-muted hover:bg-bg-surface transition-colors">Discard</button>
+            <button onClick={() => setPreview(null)} className="px-3 py-1.5 min-h-[44px] rounded text-xs text-text-muted hover:bg-bg-surface transition-colors">Discard</button>
             <button onClick={handleSave} disabled={saving || !preview.length}
-              className="px-3 py-1.5 rounded text-xs font-medium bg-accent-blue text-white hover:bg-accent-blue/80 disabled:opacity-50 transition-colors">
+              className="px-3 py-1.5 min-h-[44px] rounded text-xs font-medium bg-accent-blue text-white hover:bg-accent-blue/80 disabled:opacity-50 transition-colors">
               {saving ? 'Saving…' : `Add ${preview.length} card${preview.length !== 1 ? 's' : ''}`}
             </button>
           </div>
@@ -342,9 +342,9 @@ function CSVImportPanel({ cert, onSaved, onClose }) {
 
       {rows && (
         <div className="flex gap-2 justify-end">
-          <button onClick={() => { setRows(null); setErrors([]) }} className="px-3 py-1.5 rounded text-xs text-text-muted hover:bg-bg-surface transition-colors">Clear</button>
+          <button onClick={() => { setRows(null); setErrors([]) }} className="px-3 py-1.5 min-h-[44px] rounded text-xs text-text-muted hover:bg-bg-surface transition-colors">Clear</button>
           <button onClick={handleImport} disabled={saving || errors.length > 0 || !rows.length}
-            className="px-3 py-1.5 rounded text-xs font-medium bg-accent-blue text-white hover:bg-accent-blue/80 disabled:opacity-50 transition-colors">
+            className="px-3 py-1.5 min-h-[44px] rounded text-xs font-medium bg-accent-blue text-white hover:bg-accent-blue/80 disabled:opacity-50 transition-colors">
             {saving ? 'Importing…' : `Import ${rows.length} cards`}
           </button>
         </div>
@@ -392,17 +392,17 @@ export default function FlashcardManagerTab({ cert, flashcards, onRefresh }) {
         <span className="text-xs text-text-muted">{flashcards.length} card{flashcards.length !== 1 ? 's' : ''} total</span>
         <div className="flex gap-2 flex-wrap">
           <button onClick={() => { setGenerateOpen(o => !o); setCsvOpen(false); setBulkOpen(false) }}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs transition-colors ${generateOpen ? 'bg-accent-teal/10 text-accent-teal' : 'text-text-muted hover:text-text-primary hover:bg-bg-elevated'}`}>
+            className={`flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] rounded-lg text-xs transition-colors ${generateOpen ? 'bg-accent-teal/10 text-accent-teal' : 'text-text-muted hover:text-text-primary hover:bg-bg-elevated'}`}>
             <Sparkles size={13} /> Generate
           </button>
           <button onClick={() => { setCsvOpen(o => !o); setGenerateOpen(false); setBulkOpen(false) }}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs transition-colors ${csvOpen ? 'bg-accent-blue/10 text-accent-blue' : 'text-text-muted hover:text-text-primary hover:bg-bg-elevated'}`}>
+            className={`flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] rounded-lg text-xs transition-colors ${csvOpen ? 'bg-accent-blue/10 text-accent-blue' : 'text-text-muted hover:text-text-primary hover:bg-bg-elevated'}`}>
             <FileText size={13} /> Import CSV
           </button>
-          <button onClick={() => setBulkOpen(o => !o)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors">
+          <button onClick={() => setBulkOpen(o => !o)} className="flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] rounded-lg text-xs text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors">
             <Upload size={13} /> Bulk JSON
           </button>
-          <button onClick={() => { setAdding(true); setEditCard(null) }} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-accent-blue/10 text-accent-blue hover:bg-accent-blue/20 transition-colors">
+          <button onClick={() => { setAdding(true); setEditCard(null) }} className="flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] rounded-lg text-sm bg-accent-blue/10 text-accent-blue hover:bg-accent-blue/20 transition-colors">
             <Plus size={14} /> Add Card
           </button>
         </div>
@@ -425,8 +425,8 @@ export default function FlashcardManagerTab({ cert, flashcards, onRefresh }) {
           <p className="text-xs text-text-muted">Paste a JSON array: <code className="text-accent-blue">[{"{"}"question":"…","answer":"…","domain":"…","difficulty":"medium"{"}"}]</code></p>
           <textarea value={bulkJson} onChange={e => setBulkJson(e.target.value)} rows={4} className="w-full bg-bg-surface border border-bg-elevated rounded-lg px-3 py-2 text-xs text-text-primary font-mono-data focus:outline-none focus:border-accent-blue resize-none" placeholder='[{"question": "...", "answer": "...", "domain": "...", "difficulty": "medium"}]' />
           <div className="flex gap-2 justify-end">
-            <button onClick={() => setBulkOpen(false)} className="px-3 py-1.5 rounded text-xs text-text-muted hover:bg-bg-surface transition-colors">Cancel</button>
-            <button onClick={handleBulkImport} disabled={importing} className="px-3 py-1.5 rounded text-xs font-medium bg-accent-blue text-white hover:bg-accent-blue/80 disabled:opacity-50 transition-colors">
+            <button onClick={() => setBulkOpen(false)} className="px-3 py-1.5 min-h-[44px] rounded text-xs text-text-muted hover:bg-bg-surface transition-colors">Cancel</button>
+            <button onClick={handleBulkImport} disabled={importing} className="px-3 py-1.5 min-h-[44px] rounded text-xs font-medium bg-accent-blue text-white hover:bg-accent-blue/80 disabled:opacity-50 transition-colors">
               {importing ? 'Importing…' : 'Import'}
             </button>
           </div>
@@ -445,22 +445,47 @@ export default function FlashcardManagerTab({ cert, flashcards, onRefresh }) {
       {flashcards.length === 0 ? (
         <p className="text-text-muted text-sm text-center py-12">No flashcards yet. Add one above or use bulk import.</p>
       ) : (
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-bg-elevated">
-                {['Domain', 'Question', 'Difficulty', 'Status', ''].map(h => (
-                  <th key={h} className="text-left py-2 px-3 text-xs text-text-muted font-medium">{h}</th>
+        <>
+          {/* Desktop table */}
+          <div className="hidden md:block overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-bg-elevated">
+                  {['Domain', 'Question', 'Difficulty', 'Status', ''].map(h => (
+                    <th key={h} className="text-left py-2 px-3 text-xs text-text-muted font-medium">{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {flashcards.map(card => (
+                  <CardRow key={card.id} card={card} onEdit={c => { setEditCard(c); setAdding(false) }} onDelete={setDeleteCard} />
                 ))}
-              </tr>
-            </thead>
-            <tbody>
-              {flashcards.map(card => (
-                <CardRow key={card.id} card={card} onEdit={c => { setEditCard(c); setAdding(false) }} onDelete={setDeleteCard} />
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile card list */}
+          <div className="md:hidden space-y-3">
+            {flashcards.map(card => (
+              <div key={card.id} className="rounded-lg border border-bg-elevated bg-bg-surface p-4 space-y-2">
+                <div className="flex items-start justify-between gap-3">
+                  <p className="text-sm text-text-primary leading-snug flex-1 min-w-0">{card.question}</p>
+                  <div className="flex items-center gap-1 flex-shrink-0">
+                    <button onClick={() => { setEditCard(card); setAdding(false) }} className="h-11 w-11 flex items-center justify-center rounded text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"><Pencil size={14} /></button>
+                    <button onClick={() => setDeleteCard(card)} className="h-11 w-11 flex items-center justify-center rounded text-text-muted hover:text-danger hover:bg-bg-elevated transition-colors"><Trash2 size={14} /></button>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 text-xs">
+                  {card.domain_name && <span className="text-text-muted">{card.domain_name}</span>}
+                  <span className={DIFF_COLORS[card.difficulty]}>{card.difficulty}</span>
+                  <span className={`px-2 py-0.5 rounded ${card.active ? 'bg-success/10 text-success' : 'bg-bg-elevated text-text-muted'}`}>
+                    {card.active ? 'Active' : 'Hidden'}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
       )}
 
       <ConfirmModal open={!!deleteCard} onClose={() => setDeleteCard(null)} onConfirm={handleDelete}

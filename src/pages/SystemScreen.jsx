@@ -436,18 +436,18 @@ export default function SystemScreen() {
   return (
     <>
       <TopBar />
-      <main className="flex-1 overflow-y-auto p-6 space-y-5">
+      <main className="flex-1 overflow-y-auto px-4 py-4 md:px-6 md:py-6 space-y-5 pb-24 md:pb-6">
         <div>
           <h1 className="text-lg font-bold text-text-primary">System</h1>
           <p className="text-xs text-text-muted mt-0.5">App health, content freshness, and database overview</p>
         </div>
 
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
           <DatabaseCard />
           <AICostCard />
           <ContentFreshnessCard />
           <DigestSettingsCard />
-          <div className="col-span-2">
+          <div className="lg:col-span-2">
             <StudyGuideFreshnessCard />
           </div>
         </div>

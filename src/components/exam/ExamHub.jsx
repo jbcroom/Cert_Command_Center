@@ -72,7 +72,7 @@ export default function ExamHub({ cert, onRefreshCert }) {
   function refresh() { refetchAttempts(); onRefreshCert?.() }
 
   return (
-    <div className="flex-1 overflow-y-auto p-6 space-y-4">
+    <div className="flex-1 overflow-y-auto px-4 py-4 md:px-6 md:py-6 space-y-4 pb-24 md:pb-6">
       {/* Banners */}
       <VerificationBanner cert={cert} onVerified={onRefreshCert} />
       <div className="flex items-center gap-3">
@@ -82,7 +82,7 @@ export default function ExamHub({ cert, onRefreshCert }) {
       {cert.registered && <ExamDayChecklist cert={cert} onRefreshCert={onRefreshCert} />}
 
       {/* Tab nav */}
-      <div className="flex items-center gap-1 border-b border-bg-elevated overflow-x-auto pb-0">
+      <div className="-mx-4 md:-mx-6 px-4 md:px-6 flex items-center gap-1 border-b border-bg-elevated overflow-x-auto scrollbar-none">
         {TABS.map(t => (
           <button
             key={t.id}

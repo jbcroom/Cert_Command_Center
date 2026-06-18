@@ -38,11 +38,12 @@ export default function RescheduleDateModal({ open, onClose, cert, onSaved }) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-      <div className="bg-bg-surface border border-bg-elevated rounded-xl shadow-2xl w-full max-w-md mx-4 p-6">
+    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm md:flex md:items-center md:justify-center">
+      <div className="absolute inset-x-0 bottom-0 rounded-t-2xl md:static md:rounded-xl bg-bg-surface border border-bg-elevated shadow-2xl w-full md:max-w-md md:mx-4 p-6 max-h-[90vh] overflow-y-auto">
+        <div className="md:hidden w-10 h-1 bg-bg-elevated rounded-full mx-auto mb-4" />
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-text-primary font-semibold">Reschedule Target Date</h2>
-          <button onClick={onClose} className="text-text-muted hover:text-text-primary transition-colors"><X size={18} /></button>
+          <button onClick={onClose} className="h-11 w-11 flex items-center justify-center rounded-lg text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"><X size={18} /></button>
         </div>
         <p className="text-xs text-text-muted mb-1">{cert.name}</p>
         <p className="text-xs text-text-muted mb-4">Current: <span className="text-text-primary font-mono-data">{cert.target_date || '—'}</span></p>
@@ -59,9 +60,9 @@ export default function RescheduleDateModal({ open, onClose, cert, onSaved }) {
               placeholder="e.g. Work conflict, Voucher delay"
               className="w-full bg-bg-elevated border border-bg-elevated rounded-lg px-3 py-2 text-sm text-text-primary focus:outline-none focus:border-accent-blue placeholder-text-muted" />
           </div>
-          <div className="flex gap-3 justify-end pt-1">
-            <button type="button" onClick={onClose} className="px-4 py-2 rounded-lg text-sm text-text-muted hover:bg-bg-elevated transition-colors">Cancel</button>
-            <button type="submit" disabled={saving} className="px-4 py-2 rounded-lg text-sm font-medium bg-accent-blue text-white hover:bg-accent-blue/80 disabled:opacity-50 transition-colors">
+          <div className="flex flex-col-reverse sm:flex-row gap-3 pt-1">
+            <button type="button" onClick={onClose} className="px-4 py-2 min-h-[44px] w-full sm:w-auto rounded-lg text-sm text-text-muted hover:bg-bg-elevated transition-colors">Cancel</button>
+            <button type="submit" disabled={saving} className="px-4 py-2 min-h-[44px] w-full sm:w-auto rounded-lg text-sm font-medium bg-accent-blue text-white hover:bg-accent-blue/80 disabled:opacity-50 transition-colors">
               {saving ? 'Saving…' : 'Update Date'}
             </button>
           </div>

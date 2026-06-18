@@ -17,7 +17,7 @@ function CertLink({ cert }) {
     <NavLink
       to={`/cert/${cert.id}`}
       className={({ isActive }) =>
-        `flex items-center gap-2 px-3 py-1.5 rounded-md text-sm transition-colors ${
+        `flex items-center gap-2 px-3 py-1.5 min-h-[44px] rounded-md text-sm transition-colors ${
           isActive
             ? 'bg-bg-elevated text-text-primary'
             : 'text-text-muted hover:text-text-primary hover:bg-bg-elevated'
@@ -69,7 +69,7 @@ export default function Sidebar({ onAddCert }) {
   const years = Object.keys(grouped).map(Number).sort((a, b) => a - b)
 
   return (
-    <aside className="w-60 flex-shrink-0 h-screen flex flex-col bg-bg-surface border-r border-bg-elevated">
+    <aside className="hidden md:flex flex-col w-60 flex-shrink-0 h-screen bg-bg-surface border-r border-bg-elevated">
       {/* Logo */}
       <div className="px-4 py-5 border-b border-bg-elevated">
         <span className="text-text-primary font-bold text-base tracking-tight">
@@ -190,7 +190,7 @@ export default function Sidebar({ onAddCert }) {
         <NavLink
           to="/system"
           className={({ isActive }) =>
-            `flex items-center gap-2 px-3 py-2 rounded-md text-sm transition-colors ${
+            `flex items-center gap-2 px-3 py-2 min-h-[44px] rounded-md text-sm transition-colors ${
               isActive ? 'bg-bg-elevated text-text-primary' : 'text-text-muted hover:text-text-primary hover:bg-bg-elevated'
             }`
           }
@@ -200,7 +200,7 @@ export default function Sidebar({ onAddCert }) {
         </NavLink>
         <button
           onClick={() => supabase.auth.signOut()}
-          className="flex items-center gap-2 w-full px-3 py-2 rounded-md text-sm text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"
+          className="flex items-center gap-2 w-full px-3 py-2 min-h-[44px] rounded-md text-sm text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"
         >
           <LogOut size={15} />
           Sign out

@@ -33,7 +33,7 @@ export default function Dashboard({ onLogSession, onAddCert }) {
   return (
     <>
       <TopBar />
-      <main className="flex-1 overflow-y-auto p-6 space-y-5">
+      <main className="flex-1 overflow-y-auto px-4 py-4 md:px-6 md:py-6 space-y-5 pb-24 md:pb-6">
         {loading ? (
           <div className="flex items-center justify-center h-40">
             <span className="text-text-muted text-sm">Loading…</span>
@@ -49,11 +49,11 @@ export default function Dashboard({ onLogSession, onAddCert }) {
             <StatsRow certifications={certifications} sessions={sessions} />
             <TodayPriorityPanel certifications={certifications} />
             <JourneyTimeline certifications={certifications} />
-            <div className="grid grid-cols-3 gap-5">
-              <div className="col-span-1">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5">
+              <div className="lg:col-span-1">
                 <NextUpCard certifications={certifications} attempts={attempts} deliverables={deliverables} />
               </div>
-              <div className="col-span-2">
+              <div className="lg:col-span-2">
                 <RecentActivity sessions={sessions} onRefresh={refetchSessions} />
               </div>
             </div>

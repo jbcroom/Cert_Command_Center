@@ -46,14 +46,30 @@ export default function StudyGuideTab({ cert, initialDomain }) {
   )
 
   return (
-    <div className="flex gap-6 min-h-[500px]">
-      {/* Domain list sidebar */}
-      <div className="w-52 flex-shrink-0 space-y-0.5">
-        <p className="px-3 mb-2 text-xs font-semibold text-text-muted uppercase tracking-widest">Domains</p>
-        {domains.map(domain => {
-          const count = sectionCountByDomain[domain.name] || 0
-          const hasContent = count > 0
-          return (
+    <div className="flex flex-col md:flex-row gap-4 md:gap-6 min-h-[500px]">
+      {/* Domain list — horizontal scroll chips on mobile, sidebar on desktop */}
+      <div className="md:w-52 md:flex-shrink-0">
+        <p className="px-3 mb-2 text-xs font-semibold text-text-muted uppercase tracking-widest hidden md:block">Domains</p>
+        {/* Mobile: scrollable chip row */}
+        <div className="flex gap-2 overflow-x-auto scrollbar-none pb-1 md:hidden">
+          {domains.map(domain => (
+            <button
+              key={domain.name}
+              onClick={() => setActiveDomain(domain.name)}
+              className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-colors whitespace-nowrap ${
+                activeDomain === domain.name
+                  ? 'bg-accent-blue text-white'
+                  : 'bg-bg-elevated text-text-muted'
+              }`}
+            >
+              {domain.name}
+              <span className="ml-1 opacity-60">{domain.weight}%</span>
+            </button>
+          ))}
+        </div>
+        {/* Desktop: sidebar list */}
+        <div className="hidden md:block space-y-0.5">
+          {domains.map(domain => (
             <button
               key={domain.name}
               onClick={() => setActiveDomain(domain.name)}
@@ -68,8 +84,8 @@ export default function StudyGuideTab({ cert, initialDomain }) {
                 {domain.weight}%
               </span>
             </button>
-          )
-        })}
+          ))}
+        </div>
       </div>
 
       {/* Domain content */}

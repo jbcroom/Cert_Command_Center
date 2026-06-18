@@ -46,8 +46,8 @@ export default function FlashcardsTab({ flashcards }) {
           {domains.map(d => <option key={d} value={d}>{d}</option>)}
         </select>
         <span className="text-xs text-text-muted ml-auto">{index + 1} / {filtered.length}</span>
-        <button onClick={shuffle} className="p-1.5 rounded text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"><Shuffle size={15} /></button>
-        <button onClick={reset} className="p-1.5 rounded text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"><RotateCcw size={15} /></button>
+        <button onClick={shuffle} className="h-11 w-11 flex items-center justify-center rounded text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"><Shuffle size={15} /></button>
+        <button onClick={reset} className="h-11 w-11 flex items-center justify-center rounded text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors"><RotateCcw size={15} /></button>
       </div>
 
       {/* Card */}
@@ -69,7 +69,7 @@ export default function FlashcardsTab({ flashcards }) {
 
       {/* Navigation */}
       <div className="flex items-center justify-between gap-3">
-        <button onClick={prev} disabled={index === 0} className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-primary hover:bg-bg-elevated disabled:opacity-30 transition-colors">
+        <button onClick={prev} disabled={index === 0} className="flex items-center gap-1 px-3 py-1.5 min-h-[44px] rounded-lg text-sm text-text-muted hover:text-text-primary hover:bg-bg-elevated disabled:opacity-30 transition-colors">
           <ChevronLeft size={16} /> Prev
         </button>
 
@@ -77,14 +77,14 @@ export default function FlashcardsTab({ flashcards }) {
           <div className="flex items-center gap-2">
             {RATINGS.map(r => (
               <button key={r.label} onClick={next}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium border bg-transparent transition-colors ${r.color}`}>
+                className={`px-3 py-1.5 min-h-[44px] rounded-lg text-xs font-medium border bg-transparent transition-colors ${r.color}`}>
                 {r.label}
               </button>
             ))}
           </div>
         )}
 
-        <button onClick={next} disabled={index === filtered.length - 1} className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-primary hover:bg-bg-elevated disabled:opacity-30 transition-colors">
+        <button onClick={next} disabled={index === filtered.length - 1} className="flex items-center gap-1 px-3 py-1.5 min-h-[44px] rounded-lg text-sm text-text-muted hover:text-text-primary hover:bg-bg-elevated disabled:opacity-30 transition-colors">
           Next <ChevronRight size={16} />
         </button>
       </div>

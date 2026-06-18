@@ -88,7 +88,23 @@ function EventPill({ event }) {
 export default function CalendarPage() {
   const [events, setEvents] = useState([])
   const [loading, setLoading] = useState(true)
-  const [view, setView] = useState('week')
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768)
+  const [view, setView] = useState(() => window.innerWidth < 768 ? 'agenda' : 'week')
+  const [date, setDate] = useState(new Date())
+
+  function navigate(action) {
+    const d = new Date(date)
+    const step = view === 'month' ? 30 : view === 'week' ? 7 : view === 'agenda' ? 30 : 1
+    if (action === 'TODAY') setDate(new Date())
+    else if (action === 'PREV') { d.setDate(d.getDate() - step); setDate(d) }
+    else if (action === 'NEXT') { d.setDate(d.getDate() + step); setDate(d) }
+  }
+
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [])
 
   useEffect(() => {
     async function load() {
@@ -230,31 +246,39 @@ export default function CalendarPage() {
   return (
     <>
       <TopBar />
-      <main className="flex-1 overflow-hidden flex flex-col p-6 gap-4">
+      <main className="flex-1 overflow-hidden flex flex-col px-4 py-4 md:px-6 md:py-6 gap-4 pb-24 md:pb-6">
         <div className="flex items-center justify-between flex-shrink-0">
           <div>
             <h1 className="text-lg font-bold text-text-primary">Calendar</h1>
             <p className="text-xs text-text-muted mt-0.5">All study events across your certifications</p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 flex-wrap justify-end">
+            {/* Navigation */}
+            <div className="flex items-center gap-1">
+              <button onClick={() => navigate('PREV')} className="px-2 py-1.5 rounded-lg text-xs text-text-muted hover:bg-bg-elevated transition-colors">‹</button>
+              <button onClick={() => navigate('TODAY')} className="px-2.5 py-1.5 rounded-lg text-xs text-text-muted hover:bg-bg-elevated transition-colors">Today</button>
+              <button onClick={() => navigate('NEXT')} className="px-2 py-1.5 rounded-lg text-xs text-text-muted hover:bg-bg-elevated transition-colors">›</button>
+            </div>
+            {/* View switcher */}
+            <div className="flex items-center gap-1">
+              {(isMobile ? ['agenda', 'day'] : ['week', 'month', 'agenda']).map(v => (
+                <button key={v} onClick={() => setView(v)}
+                  className={`px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors capitalize ${
+                    view === v ? 'bg-accent-blue text-white' : 'text-text-muted hover:bg-bg-elevated'
+                  }`}>
+                  {v}
+                </button>
+              ))}
+            </div>
             <button
               onClick={() => downloadICS(events)}
               disabled={events.length === 0}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-text-muted hover:text-text-primary hover:bg-bg-elevated disabled:opacity-40 transition-colors"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-text-muted hover:text-text-primary hover:bg-bg-elevated disabled:opacity-40 transition-colors"
               title="Export as .ics calendar file"
             >
               <Download size={13} />
               Export .ics
             </button>
-            {/* View switcher */}
-            {['month', 'week', 'agenda'].map(v => (
-              <button key={v} onClick={() => setView(v)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors capitalize ${
-                  view === v ? 'bg-accent-blue text-white' : 'text-text-muted hover:bg-bg-elevated'
-                }`}>
-                {v}
-              </button>
-            ))}
           </div>
         </div>
 
@@ -279,9 +303,11 @@ export default function CalendarPage() {
               defaultView={view}
               view={view}
               onView={setView}
-              style={{ height: '100%' }}
+              date={date}
+              onNavigate={setDate}
+              style={{ height: isMobile ? 'calc(100dvh - 200px)' : '100%' }}
               eventPropGetter={eventStyleGetter}
-              components={{ event: EventPill }}
+              components={{ event: EventPill, toolbar: () => null }}
               popup
               showMultiDayTimes
             />

@@ -54,7 +54,7 @@ export default function ExportButton({ certId }) {
   return (
     <div className="relative">
       <button onClick={() => setOpen(o => !o)} disabled={loading}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors disabled:opacity-50">
+        className="flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] rounded-md text-sm text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors disabled:opacity-50">
         <Download size={14} />
         Export
         <ChevronDown size={12} />

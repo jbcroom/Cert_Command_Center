@@ -3,14 +3,14 @@ import { useStudyStats } from '../../hooks/useStudyStats'
 
 function StatCard({ icon: Icon, label, value, sub, color = 'text-text-primary' }) {
   return (
-    <div className="bg-bg-surface rounded-xl p-5 border border-bg-elevated flex items-center gap-4">
+    <div className="bg-bg-surface rounded-xl p-3 md:p-5 border border-bg-elevated flex items-center gap-3 md:gap-4">
       <div className="p-2 rounded-lg bg-bg-elevated flex-shrink-0">
         <Icon size={18} className={color} />
       </div>
       <div className="min-w-0">
-        <p className="text-2xl font-bold font-mono-data text-text-primary leading-none">{value}</p>
+        <p className="text-xl md:text-2xl font-bold font-mono-data text-text-primary leading-none">{value}</p>
         {sub && <p className="text-xs text-text-muted mt-0.5">{sub}</p>}
-        <p className="text-xs text-text-muted mt-0.5">{label}</p>
+        <p className="text-xs text-text-muted mt-0.5 leading-tight">{label}</p>
       </div>
     </div>
   )
@@ -23,7 +23,7 @@ function WeeklyCard({ hoursThisWeek, weeklyTarget, onUpdateTarget }) {
   const dash = pct * circ
 
   return (
-    <div className="bg-bg-surface rounded-xl p-5 border border-bg-elevated flex items-center gap-4">
+    <div className="bg-bg-surface rounded-xl p-3 md:p-5 border border-bg-elevated flex items-center gap-3 md:gap-4">
       <div className="relative w-9 h-9 flex-shrink-0">
         <svg viewBox="0 0 36 36" className="w-9 h-9 -rotate-90">
           <circle cx="18" cy="18" r={r} fill="none" strokeWidth="3.5" className="stroke-bg-elevated" />
@@ -39,10 +39,10 @@ function WeeklyCard({ hoursThisWeek, weeklyTarget, onUpdateTarget }) {
         </span>
       </div>
       <div className="min-w-0">
-        <p className="text-2xl font-bold font-mono-data text-text-primary leading-none">
+        <p className="text-xl md:text-2xl font-bold font-mono-data text-text-primary leading-none">
           {hoursThisWeek.toFixed(1)}<span className="text-sm font-normal text-text-muted">h</span>
         </p>
-        <p className="text-xs text-text-muted mt-0.5">of {weeklyTarget}h goal this week</p>
+        <p className="text-xs text-text-muted mt-0.5 leading-tight">of {weeklyTarget}h goal this week</p>
       </div>
     </div>
   )
@@ -70,17 +70,13 @@ export default function StatsRow({ certifications, sessions }) {
   const nextExam = daysUntilNearest(certifications)
 
   return (
-    <div className="grid grid-cols-3 gap-4">
-      <div className="col-span-3 grid grid-cols-3 gap-4">
-        <StatCard icon={Flame}         label="Day streak"         value={streakDays}   color={streakDays > 0 ? 'text-warning' : 'text-text-muted'} />
-        <StatCard icon={Trophy}        label="Certs complete"     value={complete}     color="text-accent-gold" />
-        <StatCard icon={CalendarClock} label="Next exam in"       value={nextExam}     color="text-warning" />
-      </div>
-      <div className="col-span-3 grid grid-cols-3 gap-4">
-        <WeeklyCard hoursThisWeek={hoursThisWeek} weeklyTarget={weeklyTarget} />
-        <StatCard icon={BookOpen}      label="Currently studying" value={studying}     color="text-accent-blue" />
-        <StatCard icon={Clock}         label="Total study hours"  value={totalHours}   color="text-accent-teal" />
-      </div>
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
+      <StatCard icon={Flame}         label="Day streak"         value={streakDays}   color={streakDays > 0 ? 'text-warning' : 'text-text-muted'} />
+      <StatCard icon={Trophy}        label="Certs complete"     value={complete}     color="text-accent-gold" />
+      <StatCard icon={CalendarClock} label="Next exam in"       value={nextExam}     color="text-warning" />
+      <WeeklyCard hoursThisWeek={hoursThisWeek} weeklyTarget={weeklyTarget} />
+      <StatCard icon={BookOpen}      label="Currently studying" value={studying}     color="text-accent-blue" />
+      <StatCard icon={Clock}         label="Total study hours"  value={totalHours}   color="text-accent-teal" />
     </div>
   )
 }

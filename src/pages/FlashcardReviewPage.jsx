@@ -73,7 +73,7 @@ function QueueScreen({ certifications, onStart }) {
                 <button
                   onClick={() => onStart(cert)}
                   disabled={due === 0}
-                  className="px-3 py-1.5 rounded-lg text-sm font-medium bg-accent-blue text-white hover:bg-accent-blue/80 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  className="px-3 py-1.5 min-h-[44px] rounded-lg text-sm font-medium bg-accent-blue text-white hover:bg-accent-blue/80 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
                   Review
                 </button>
@@ -177,7 +177,7 @@ function ReviewSession({ cert, onDone }) {
 
       {/* Card */}
       <div
-        className="bg-bg-surface border border-bg-elevated rounded-xl p-6 min-h-[200px] flex flex-col cursor-pointer select-none"
+        className="bg-bg-surface border border-bg-elevated rounded-xl p-6 min-h-[280px] md:min-h-[320px] flex flex-col cursor-pointer select-none"
         onClick={() => !flipped && setFlipped(true)}
       >
         <p className="text-xs text-text-muted uppercase tracking-widest mb-3">
@@ -193,21 +193,21 @@ function ReviewSession({ cert, onDone }) {
 
       {/* Response buttons */}
       {flipped ? (
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           {BUTTONS.map(({ label, quality, className }) => (
             <button
               key={label}
               onClick={() => respond(quality)}
-              className={`py-2.5 rounded-lg text-sm font-semibold transition-colors ${className}`}
+              className={`min-h-[56px] rounded-lg text-sm font-semibold transition-colors ${className}`}
             >
               {label}
             </button>
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           {BUTTONS.map(({ label }) => (
-            <div key={label} className="py-2.5 rounded-lg text-sm font-semibold text-center bg-bg-elevated/40 text-text-muted/30 select-none">
+            <div key={label} className="min-h-[56px] flex items-center justify-center rounded-lg text-sm font-semibold text-center bg-bg-elevated/40 text-text-muted/30 select-none">
               {label}
             </div>
           ))}
@@ -286,7 +286,7 @@ export default function FlashcardReviewPage() {
         </h1>
       </header>
 
-      <main className="flex-1 overflow-y-auto p-6">
+      <main className="flex-1 overflow-y-auto px-4 py-4 md:px-6 md:py-6 pb-24 md:pb-6">
         {activeCert ? (
           <ReviewSession cert={activeCert} onDone={() => setActiveCert(null)} />
         ) : (

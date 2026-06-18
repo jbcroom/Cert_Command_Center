@@ -216,7 +216,7 @@ export default function ReadinessTab({ cert, attempts, flashcards }) {
           <h3 className="text-base font-semibold text-text-primary">Exam Readiness</h3>
           <p className="text-xs text-text-muted mt-0.5">Go / No-Go assessment across all available signals</p>
         </div>
-        <button onClick={compute} disabled={loading} className="p-1.5 rounded-lg text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors disabled:opacity-40">
+        <button onClick={compute} disabled={loading} className="h-11 w-11 flex items-center justify-center rounded-lg text-text-muted hover:text-text-primary hover:bg-bg-elevated transition-colors disabled:opacity-40">
           <RefreshCw size={14} className={loading ? 'animate-spin' : ''} />
         </button>
       </div>

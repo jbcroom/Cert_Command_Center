@@ -1,9 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AuthProvider, useAuth } from './context/AuthContext'
-import { supabase } from './lib/supabaseClient'
 import LoginScreen from './components/auth/LoginScreen'
-import FirstRunScreen from './components/shared/FirstRunScreen'
 import AppShell from './components/layout/AppShell'
 import Dashboard from './pages/Dashboard'
 import CertPage from './pages/CertPage'
@@ -19,6 +17,7 @@ import CertFormModal from './components/shared/CertFormModal'
 import RescheduleDateModal from './components/shared/RescheduleDateModal'
 import ArchiveModal from './components/shared/ArchiveModal'
 import { useCertifications } from './hooks/useCertifications'
+import FirstRunScreen from './components/shared/FirstRunScreen'
 
 function TitleUpdater({ certifications }) {
   const location = useLocation()
@@ -84,9 +83,11 @@ function AppRoutes() {
   const [helpOpen, setHelpOpen] = useState(false)
   const [refreshKey, setRefreshKey] = useState(0)
 
-  const { certifications } = useCertifications({ includeArchived: true })
+  const { certifications, loading: certsLoading } = useCertifications({ includeArchived: true })
   const location = useLocation()
   const refresh = useCallback(() => setRefreshKey(k => k + 1), [])
+
+  if (!certsLoading && certifications.length === 0) return <FirstRunScreen />
 
   const closeAll = useCallback(() => {
     setLogSessionCert(null); setAddCertOpen(false); setEditCert(null)
@@ -148,18 +149,8 @@ function AppRoutes() {
 
 function AppContent() {
   const { session } = useAuth()
-  const [certCount, setCertCount] = useState(undefined)
 
-  useEffect(() => {
-    if (!session) return
-    supabase
-      .from('certifications')
-      .select('id', { count: 'exact', head: true })
-      .then(({ count }) => setCertCount(count ?? 0))
-      .catch(() => setCertCount(0))
-  }, [session])
-
-  if (session === undefined || (session && certCount === undefined)) {
+  if (session === undefined) {
     return (
       <div className="min-h-screen bg-bg-primary flex items-center justify-center">
         <span className="text-text-muted text-sm">Loading…</span>
@@ -168,8 +159,6 @@ function AppContent() {
   }
 
   if (session === null) return <LoginScreen />
-
-  if (certCount === 0) return <FirstRunScreen />
 
   return (
     <BrowserRouter>

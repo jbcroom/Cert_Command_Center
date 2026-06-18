@@ -71,8 +71,8 @@ export default function ResourcesTab({ cert, onRefresh }) {
           </div>
         </div>
         <div className="flex gap-2 justify-end">
-          <button type="button" onClick={onCancel} className="px-3 py-1.5 rounded text-xs text-text-muted hover:bg-bg-surface transition-colors">Cancel</button>
-          <button type="submit" className="px-3 py-1.5 rounded text-xs font-medium bg-accent-blue text-white hover:bg-accent-blue/80 transition-colors">Save</button>
+          <button type="button" onClick={onCancel} className="px-3 py-1.5 min-h-[44px] rounded text-xs text-text-muted hover:bg-bg-surface transition-colors">Cancel</button>
+          <button type="submit" className="px-3 py-1.5 min-h-[44px] rounded text-xs font-medium bg-accent-blue text-white hover:bg-accent-blue/80 transition-colors">Save</button>
         </div>
       </form>
     )
@@ -82,7 +82,7 @@ export default function ResourcesTab({ cert, onRefresh }) {
     <div className="space-y-4">
       <div className="flex justify-end">
         <button onClick={() => { setAdding(true); setEditIdx(null); setForm(BLANK) }}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-accent-blue/10 text-accent-blue hover:bg-accent-blue/20 transition-colors">
+          className="flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] rounded-lg text-sm bg-accent-blue/10 text-accent-blue hover:bg-accent-blue/20 transition-colors">
           <Plus size={14} /> Add Resource
         </button>
       </div>

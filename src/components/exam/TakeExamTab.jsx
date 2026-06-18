@@ -318,7 +318,7 @@ function ExamScreen({ state, dispatch, onSubmit }) {
   return (
     <div className="space-y-5">
       {/* Top bar */}
-      <div className="flex items-center justify-between">
+      <div className="sticky top-0 z-10 bg-bg-primary -mx-4 px-4 md:mx-0 md:px-0 md:static py-2 md:py-0 border-b border-bg-elevated md:border-0 flex items-center justify-between">
         <span className="text-xs text-text-muted">{answeredCount} / {questions.length} answered</span>
         <div className="flex items-center gap-3">
           {!isPractice && (

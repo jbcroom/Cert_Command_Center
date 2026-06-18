@@ -1,0 +1,309 @@
+[
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Governance",
+    "section_type": "overview",
+    "content": "Data Governance encompasses the exercise of authority, control, and shared decision-making over the management of data assets. It is the cross-cutting discipline that sits at the center of the DAMA Wheel, providing oversight and accountability structures for every other knowledge area. At 11% of the CDMP exam, it is one of the three most heavily weighted domains.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Governance",
+    "section_type": "exam_focus",
+    "content": "- Definition of data governance vs. data management (governance = authority and oversight; management = execution)\n- Core roles: Data Owner (authority and accountability), Data Steward (operational responsibility), Chief Data Officer (CDO), Data Governance Council\n- Governance operating model: organizational structure, policies and standards, and processes\n- Governance metrics: measure behavior and value realization, not technical infrastructure\n- DAMA Wheel: governance sits at the center because it provides cross-cutting oversight of all 13 other knowledge areas\n- Governance program design: business case, roadmap, maturity assessment\n- Escalation and dispute resolution: RACI and governance council ratification for cross-functional ownership conflicts\n- Relationship between data policy, data standard, and data procedure",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Governance",
+    "section_type": "key_concepts",
+    "content": "Data Governance, Data Management, Data Owner, Data Steward, Chief Data Officer (CDO), Data Governance Council, Data Policy, Data Standard, Governance Operating Model, RACI, Business Glossary, Accountability, Stewardship Program, Governance Metrics, Data Management Maturity",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Quality",
+    "section_type": "overview",
+    "content": "Data Quality covers the processes, techniques, and tools used to measure, manage, and improve the fitness of data for its intended use. At 11% of the CDMP exam, it shares the top weight tier alongside Data Governance and Data Modeling & Design. Data quality activities span the entire data lifecycle, from initial capture through archival.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Quality",
+    "section_type": "exam_focus",
+    "content": "- Data quality dimensions: accuracy, completeness, consistency, timeliness, uniqueness (currency), validity, integrity\n- Data quality lifecycle (DMAIC): Define, Measure, Analyze, Improve, Control\n- Data profiling: structure, content, and relationship profiling; used to discover issues, not fix them\n- Data quality rules: format rules, range rules, referential integrity rules, uniqueness rules\n- Root cause analysis for DQ issues (not just remediation)\n- Total Data Quality Management (TDQM): treats data as a product, emphasizes prevention over correction\n- Data quality scorecards and SLAs\n- Data cleansing vs. data standardization vs. data enrichment — distinctions matter\n- Fitness for purpose: quality is relative to business use, not absolute",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Quality",
+    "section_type": "key_concepts",
+    "content": "Data Quality Dimensions, Fitness for Purpose, Data Profiling, Data Cleansing, Data Standardization, Data Enrichment, DMAIC, Root Cause Analysis, Total Data Quality Management (TDQM), Data Quality Rules, Referential Integrity, Data Quality Scorecard, Data Quality SLA, Issue Remediation, Prevention vs. Correction",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Modeling & Design",
+    "section_type": "overview",
+    "content": "Data Modeling & Design covers the processes of discovering, analyzing, and representing data requirements in a precise, formal structure called a data model. At 11% of the CDMP exam, it is the most technically detailed of the top-weighted domains, testing specific modeling notation, normalization rules, and schema types.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Modeling & Design",
+    "section_type": "exam_focus",
+    "content": "- Model abstraction levels: conceptual (business view), logical (technology-independent structure), physical (database-specific implementation)\n- Modeling schemes: relational, dimensional, NoSQL (document, key-value, columnar, graph), object-oriented\n- Normalization: 1NF (atomic values, no repeating groups), 2NF (no partial dependencies), 3NF (no transitive dependencies), BCNF\n- Entity-Relationship (ER) modeling: entities, attributes (simple, composite, derived, multi-valued), relationships, cardinality (one-to-one, one-to-many, many-to-many), optionality\n- Dimensional modeling: fact tables (measures + foreign keys), dimension tables (descriptive attributes), star schema, snowflake schema\n- Data model quality: completeness, correctness, consistency, uniqueness, minimalism\n- Data model management: versioning, model registry, forward and reverse engineering\n- Difference between a data dictionary and a data model",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Modeling & Design",
+    "section_type": "key_concepts",
+    "content": "Conceptual Model, Logical Model, Physical Model, Entity, Attribute, Relationship, Cardinality, Optionality, Normalization (1NF/2NF/3NF/BCNF), Denormalization, Star Schema, Snowflake Schema, Fact Table, Dimension Table, Data Vault, ER Diagram, Data Dictionary, Model Registry, Forward Engineering, Reverse Engineering",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Architecture",
+    "section_type": "overview",
+    "content": "Data Architecture defines the master blueprints that guide how data is acquired, transported, stored, queried, and archived across the enterprise. It aligns data requirements with the organization's overall enterprise architecture strategy and establishes the long-term structural foundation for all data initiatives. It carries 6% of the CDMP exam weight.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Architecture",
+    "section_type": "exam_focus",
+    "content": "- Data architecture's role within Enterprise Architecture frameworks (Zachman Framework, TOGAF)\n- Architecture abstraction levels: conceptual, logical, physical data architecture\n- Key artifacts: enterprise data model, data flow diagrams, data architecture standards, system/data asset catalogs\n- Current-state vs. future-state architecture and roadmaps\n- Architecture review board: role in governance of data architecture decisions\n- Aligning data architecture with business strategy and IT strategy\n- Data architecture principles as the basis for design decisions\n- Relationship between data architecture and other DMBOK knowledge areas (especially Data Modeling, Data Integration, Data Storage)",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Architecture",
+    "section_type": "key_concepts",
+    "content": "Enterprise Data Model, Data Architecture Framework, Zachman Framework, TOGAF, Data Flow Diagram, Current-State Architecture, Future-State Architecture, Architecture Roadmap, Architecture Review Board, Data Principles, System Catalog, Subject Area Model, Data Architecture Standards",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Storage & Operations",
+    "section_type": "overview",
+    "content": "Data Storage & Operations covers the design, implementation, and ongoing support of stored data across its lifecycle, including database administration and the technical activities required to keep data available, performant, and recoverable. It carries 6% of the CDMP exam weight and focuses on operational stewardship of physical data assets.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Storage & Operations",
+    "section_type": "exam_focus",
+    "content": "- Database types and when to use each: relational (RDBMS), columnar, key-value, document, graph\n- Database administration (DBA) responsibilities: performance tuning, backup and recovery, capacity planning, change management\n- Storage media and tiering: hot, warm, cold storage; SSD vs. HDD tradeoffs\n- Data retention policies and archival strategy (distinction between archival and backup)\n- High availability (HA) and disaster recovery (DR): RPO, RTO, failover, clustering\n- Database change management: release process, migration scripts, rollback procedures\n- Index management, partitioning, and query optimization at a conceptual level\n- Cloud and virtualization considerations for storage decisions",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Storage & Operations",
+    "section_type": "key_concepts",
+    "content": "Database Administration (DBA), Backup and Recovery, RPO (Recovery Point Objective), RTO (Recovery Time Objective), High Availability, Disaster Recovery, Data Retention, Data Archival, Storage Tiering, Performance Tuning, Partitioning, Replication, Index Management, Data Lifecycle Management, Database Change Management",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Security",
+    "section_type": "overview",
+    "content": "Data Security covers the planning, development, and execution of security policies and procedures to ensure that data assets are properly authenticated, authorized, and protected against unauthorized access, corruption, or theft throughout the data lifecycle. It carries 6% of the CDMP exam weight and increasingly intersects with privacy regulation.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Security",
+    "section_type": "exam_focus",
+    "content": "- Data classification schemes: confidential, internal use, public (and how classification drives handling rules)\n- Access control models: Role-Based Access Control (RBAC), Attribute-Based Access Control (ABAC), Discretionary Access Control (DAC), Mandatory Access Control (MAC)\n- Authentication vs. authorization — distinct concepts; both required for secure access\n- Data protection techniques: encryption (at rest and in transit), data masking, tokenization, data anonymization\n- Privacy concepts: PII identification, data minimization, purpose limitation; GDPR, CCPA, HIPAA as referenced in DMBOK context (not deep legal knowledge)\n- Audit logging and monitoring: what to log, who reviews it, retention of logs\n- Need-to-know principle and least privilege\n- Security in the data lifecycle: data at rest, in transit, in use",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Security",
+    "section_type": "key_concepts",
+    "content": "Data Classification, Access Control, RBAC, ABAC, DAC, MAC, Authentication, Authorization, Encryption, Data Masking, Tokenization, Data Anonymization, Personally Identifiable Information (PII), Data Loss Prevention (DLP), Audit Log, Need-to-Know Principle, Least Privilege, Privacy Regulation (GDPR/CCPA/HIPAA context)",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Reference & Master Data",
+    "section_type": "overview",
+    "content": "Reference & Master Data covers the management of shared data used consistently across multiple business functions — providing authoritative values for core business entities and standardized code lists. Master data represents the key business objects (customer, product, location); reference data provides the shared lookup values and classifications that describe them. This domain carries 6% of the CDMP exam weight.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Reference & Master Data",
+    "section_type": "exam_focus",
+    "content": "- Distinction between master data and reference data: master data = core business entities; reference data = shared lookup values and code sets\n- Master data domains: customer, product, employee, location, supplier, asset\n- MDM implementation styles: Registry (index, no copy), Consolidation (analytical golden record), Coexistence (distributed with sync), Centralized (single authoritative hub)\n- Golden record: the single authoritative version created via survivorship rules\n- Survivorship rules: how conflicting values across source systems are resolved\n- Entity resolution: identifying that records in different systems refer to the same real-world entity\n- Hierarchy management in master data (e.g., product hierarchies, org hierarchies)\n- Reference data management: governance of code tables, value lists, and their change control",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Reference & Master Data",
+    "section_type": "key_concepts",
+    "content": "Master Data, Reference Data, Golden Record, Master Data Management (MDM), MDM Hub, Registry Model, Consolidation Model, Coexistence Model, Centralized Model, Survivorship Rules, Entity Resolution, Hierarchy Management, Code Table, Data Steward, Cross-Reference, Data Domains (Customer/Product/Location/Supplier)",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Warehousing & BI",
+    "section_type": "overview",
+    "content": "Data Warehousing & BI covers the planning, implementation, and control of processes that provide decision-support data and analytical capabilities to knowledge workers. It encompasses the architectures, modeling techniques, ETL/ELT processes, and reporting tools that transform operational data into business insight. This domain carries 6% of the CDMP exam weight.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Warehousing & BI",
+    "section_type": "exam_focus",
+    "content": "- Data warehouse architectural approaches: Inmon (top-down, normalized EDW), Kimball (bottom-up, dimensional data marts), Data Vault (hub-satellite-link, auditable), Data Lakehouse\n- ETL vs. ELT: ETL transforms before loading (traditional DW); ELT loads raw then transforms in target (modern cloud/lake)\n- OLAP operations: slicing (filter on one dimension), dicing (filter on multiple dimensions), drill-down (increase granularity), roll-up (aggregate), pivoting (rotate axes)\n- Slowly Changing Dimensions (SCD): Type 1 (overwrite), Type 2 (add row with versioning), Type 3 (add column for prior value)\n- Data marts: dependent (sourced from EDW) vs. independent (sourced directly from operational systems)\n- Conformed dimensions: shared dimension definitions that allow data marts to be joined\n- BI tool categories: reporting, dashboarding, self-service analytics, OLAP cubes\n- Metadata in the DW context: technical lineage, business definitions, operational stats",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Warehousing & BI",
+    "section_type": "key_concepts",
+    "content": "Data Warehouse, Data Mart, ETL, ELT, OLAP, Star Schema, Snowflake Schema, Slowly Changing Dimension (SCD Types 1/2/3), Conformed Dimension, Data Vault, Kimball Methodology, Inmon Methodology, Dependent vs. Independent Data Mart, Drill-Down, Roll-Up, Slicing, Dicing, Operational BI",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Document & Content Management",
+    "section_type": "overview",
+    "content": "Document & Content Management covers the control of the full lifecycle of data and information stored in unstructured formats — documents, images, email, video, and other content types that live outside traditional relational databases. It includes records management, content classification, and the governance of retention and disposition. This domain carries 6% of the CDMP exam weight.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Document & Content Management",
+    "section_type": "exam_focus",
+    "content": "- Distinction between structured data (database rows) and unstructured content (documents, email, media)\n- Content lifecycle: creation → review/approval → distribution → active use → retention → disposition\n- Content Management System (CMS) types: web CMS, enterprise content management (ECM), digital asset management (DAM)\n- Records management: what constitutes an official record vs. a convenience copy; legal and compliance implications\n- Retention schedules: legally and operationally mandated retention periods by content type\n- Legal holds: suspension of normal retention/disposition when litigation is anticipated\n- Taxonomy and controlled vocabulary: classification structures that enable search and retrieval\n- Metadata for content: author, date, subject, classification, retention class\n- Version control for documents",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Document & Content Management",
+    "section_type": "key_concepts",
+    "content": "Document Management, Enterprise Content Management (ECM), Content Management System (CMS), Digital Asset Management (DAM), Records Management, Official Record, Convenience Copy, Retention Schedule, Legal Hold, Taxonomy, Controlled Vocabulary, Content Lifecycle, Disposition, Version Control, Unstructured Data",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Metadata Management",
+    "section_type": "overview",
+    "content": "Metadata Management covers the planning, implementation, and control of activities that enable access to high-quality, integrated metadata — the data about data that drives discoverability, lineage, and shared understanding across the enterprise. Effective metadata management underpins data governance, data quality, and data architecture. It carries 6% of the CDMP exam weight.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Metadata Management",
+    "section_type": "exam_focus",
+    "content": "- Metadata types: business metadata (business definitions, rules, stewards), technical metadata (schemas, data types, lineage), operational metadata (processing stats, job logs, SLAs)\n- Metadata repository: the system of record for enterprise metadata; distinct from a data catalog (which is user-facing)\n- Business glossary vs. data catalog vs. data dictionary — different tools, different audiences, often confused\n- Data lineage: end-to-end tracking of where data originates, how it is transformed, and where it lands; critical for impact analysis and trust\n- Active vs. passive metadata management: active = metadata drives automated processes; passive = metadata is documented for human reference\n- Metadata standards: ISO/IEC 11179 (naming and definition standards), Dublin Core (content metadata)\n- Data provenance: the documented history of data's origin and custody\n- Role of metadata in governance and data quality programs",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Metadata Management",
+    "section_type": "key_concepts",
+    "content": "Metadata, Business Metadata, Technical Metadata, Operational Metadata, Data Lineage, Data Provenance, Metadata Repository, Data Catalog, Business Glossary, Data Dictionary, ISO/IEC 11179, Dublin Core, Active Metadata, Passive Metadata, Impact Analysis, Semantic Layer",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Integration & Interoperability",
+    "section_type": "overview",
+    "content": "Data Integration & Interoperability covers the processes and techniques used to manage the movement and consolidation of data within and between data stores, applications, and organizations. It ensures that data flows are reliable, timely, consistent, and governed — from legacy batch ETL pipelines to modern event-driven and API-based architectures. It carries 6% of the CDMP exam weight.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Integration & Interoperability",
+    "section_type": "exam_focus",
+    "content": "- Integration patterns: ETL (Extract-Transform-Load), ELT (Extract-Load-Transform), EAI (Enterprise Application Integration), ESB (Enterprise Service Bus), API-led integration, data federation, data virtualization\n- Physical integration vs. virtual integration (federation/virtualization): no data movement in virtual approaches\n- Data replication types: transactional (change-capture), snapshot (full copy), log-based\n- Latency categories: batch (hours/days), micro-batch (minutes), near-real-time (seconds), real-time (sub-second)\n- Canonical data model: a neutral, enterprise-standard data format used to decouple source and target systems in integration\n- Message-oriented middleware and event-driven architecture: producers, consumers, brokers, topics\n- Integration metadata: tracking data lineage and transformation logic through integration flows\n- Master data in integration: MDM hub as a canonical source for integration flows",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Integration & Interoperability",
+    "section_type": "key_concepts",
+    "content": "ETL, ELT, Enterprise Application Integration (EAI), Enterprise Service Bus (ESB), API Integration, Data Federation, Data Virtualization, Message Broker, Event-Driven Architecture, Data Replication, Latency (Batch/Near-Real-Time/Real-Time), Canonical Data Model, Data Hub, Integration Metadata, Log-Based Replication",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Management Process",
+    "section_type": "overview",
+    "content": "Data Management Process (referred to in DMBOK2 as the Data Management Framework knowledge area in some editions) covers the organizational practices, strategies, and frameworks for managing data activities across the enterprise — the overarching 'how we operate' of data management programs. It includes strategy, organizational design, maturity assessment, and change management. It carries 6% of the CDMP exam weight.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Management Process",
+    "section_type": "exam_focus",
+    "content": "- Data management strategy components: vision, mission, goals, guiding principles, success metrics\n- Data management program structure: centralized, federated, and hybrid organizational models\n- Data management maturity models: DCAM (Data Management Capability Assessment Model), CMMI-DMM — used to assess and benchmark program maturity\n- Business case development for data management initiatives: quantifying value and cost of poor data quality\n- Change management in data programs: stakeholder engagement, communication planning, training\n- Data management roles at the program level: Chief Data Officer, Data Governance Council, program management office\n- Measuring the value and ROI of data management: metrics for program effectiveness, not just data quality\n- Relationship between data strategy and IT strategy and business strategy",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Data Management Process",
+    "section_type": "key_concepts",
+    "content": "Data Management Strategy, Data Management Framework, DAMA-DMBOK, DCAM, CMMI-DMM, Data Management Maturity, Centralized Model, Federated Model, Hybrid Model, Change Management, Business Case, Data Principles, Program Governance, Chief Data Officer, Data Management ROI, Stakeholder Engagement",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Big Data & Data Science",
+    "section_type": "overview",
+    "content": "Big Data & Data Science covers the practices, tools, and organizational structures for working with high-volume, high-velocity, or high-variety data and for applying analytical and statistical techniques to extract insight and predictive value from data assets. It addresses both the infrastructure challenges of scale and the methodological practices of the data science lifecycle. It carries 6% of the CDMP exam weight.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Big Data & Data Science",
+    "section_type": "exam_focus",
+    "content": "- Big Data characteristics: the 5 Vs — Volume (scale), Velocity (speed of generation/processing), Variety (structured/semi-structured/unstructured), Veracity (trustworthiness), Value (business utility)\n- Big Data architectural patterns: Lambda architecture (batch layer + speed layer + serving layer), Kappa architecture (streaming-only, eliminates batch layer)\n- Data lake: centralized repository for raw data at scale; distinction from data warehouse (schema-on-write vs. schema-on-read)\n- CRISP-DM lifecycle: Business Understanding → Data Understanding → Data Preparation → Modeling → Evaluation → Deployment\n- Machine learning categories: supervised (labeled training data, prediction), unsupervised (clustering, pattern discovery), reinforcement (reward-based learning)\n- Data science roles: Data Scientist (modeling and analysis), Data Engineer (pipelines and infrastructure), ML Engineer (model operationalization) — distinct responsibilities\n- Ethics and bias in data science: algorithmic bias, fairness, explainability, data governance for ML\n- Feature engineering: transformation of raw data into model inputs",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "Big Data & Data Science",
+    "section_type": "key_concepts",
+    "content": "Big Data, 5 Vs (Volume/Velocity/Variety/Veracity/Value), Lambda Architecture, Kappa Architecture, Data Lake, Schema-on-Read, CRISP-DM, Machine Learning, Supervised Learning, Unsupervised Learning, Feature Engineering, Model Validation, Data Scientist, Data Engineer, ML Engineer, Algorithmic Bias",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "cdmp",
+    "domain_name": "DMBOK Framework",
+    "section_type": "overview",
+    "content": "DMBOK Framework covers the overarching structure, philosophy, and context of the DAMA Data Management Body of Knowledge itself — including the DAMA Wheel, Environmental Factors Hexagon, and how the 14 knowledge areas relate to each other. Questions in this domain test whether candidates understand how DMBOK2 is organized and how to navigate it as a reference framework. It carries 6% of the CDMP exam weight.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "DMBOK Framework",
+    "section_type": "exam_focus",
+    "content": "- DAMA Wheel: Data Governance at the center; the other 13 knowledge areas arranged around it — the positioning signals governance's cross-cutting coordination role\n- Environmental Factors Hexagon: the six context components of each knowledge area — Goals & Principles, Activities, Roles & Responsibilities, Deliverables, Techniques, and Technology\n- DMBOK2 knowledge area definitions: scope boundaries and primary activities for each of the 14 areas\n- Context diagram: each knowledge area has one — shows inputs, outputs, and relationships to other knowledge areas\n- DAMA mission: to promote the concepts and best practices that enable organizations to derive value from data\n- Data management definition per DMBOK2: 'the development, execution, and supervision of plans, policies, programs, and practices that deliver, control, protect, and enhance the value of data and information assets'\n- Cross-knowledge-area relationships: which areas depend on or enable each other\n- DAMA Data Management Maturity Assessment framework",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "cdmp",
+    "domain_name": "DMBOK Framework",
+    "section_type": "key_concepts",
+    "content": "DAMA Wheel, Environmental Factors Hexagon, DMBOK2, Knowledge Area, Context Diagram, Goals & Principles, Activities, Roles & Responsibilities, Deliverables, Techniques, Technology, DAMA Mission, Data Management Definition, Framework Navigation, DAMA Maturity Assessment",
+    "is_ai_generated": false
+  }
+]

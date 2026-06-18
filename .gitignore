@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+
+# env files — never commit real keys
+.env.local
+.env.*.local
+
+# Vite build output
+dist/
+dist-ssr/
+
+# editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+npm-debug.log*
+
+# Claude Code
+.claude/

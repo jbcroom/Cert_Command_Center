@@ -1,0 +1,199 @@
+[
+  {
+    "cert_id": "dp-700",
+    "domain_name": "Implement and manage analytics solutions",
+    "section_type": "overview",
+    "content": "This domain covers the design, deployment, and ongoing management of end-to-end analytics solutions in Microsoft Fabric. At 34% of the DP-700 exam — the highest-weighted domain — it tests the broadest range of Fabric capabilities, from Lakehouse and warehouse design through semantic model management and reporting layer configuration.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "dp-700",
+    "domain_name": "Implement and manage analytics solutions",
+    "section_type": "exam_focus",
+    "content": "- Lakehouse architecture: tables vs. files storage zones, Delta Lake format, schema enforcement vs. schema evolution\n- Medallion architecture: Bronze (raw ingest) → Silver (cleaned/validated) → Gold (business-ready aggregates) — when and why to apply each layer\n- Fabric Warehouse vs. Lakehouse: SQL analytics endpoint differences, when to use each\n- Semantic models: DirectLake vs. Import vs. DirectQuery storage modes; when DirectLake breaks back to DirectQuery\n- Power BI integration: workspace roles, deployment pipelines, sensitivity labels\n- Shortcuts: virtual data access to OneLake, ADLS Gen2, S3 — no data copy; limitations for write operations\n- OneLake: single logical data lake per tenant, Fabric's unified storage layer\n- Workspace and capacity management: Fabric capacities, workload settings, pausing/resuming\n- Security: row-level security (RLS) in semantic models, object-level security (OLS), workspace roles vs. item permissions\n- Monitoring: Fabric Capacity Metrics app, query insights, activity logs",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "dp-700",
+    "domain_name": "Implement and manage analytics solutions",
+    "section_type": "key_concepts",
+    "content": "Lakehouse, Fabric Warehouse, Medallion Architecture (Bronze/Silver/Gold), Delta Lake, OneLake, Shortcuts, DirectLake Mode, Import Mode, DirectQuery Mode, Semantic Model, Power BI Dataset, SQL Analytics Endpoint, Workspace Roles, Deployment Pipeline, Row-Level Security (RLS), Object-Level Security (OLS), Fabric Capacity, Capacity Metrics App",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "dp-700",
+    "domain_name": "Ingest and transform data",
+    "section_type": "overview",
+    "content": "This domain covers the movement of data into Microsoft Fabric and its transformation into analysis-ready form. At 33% of the DP-700 exam, it tests knowledge of Fabric's native ingestion tools (Data Factory pipelines, Dataflows Gen2, notebooks) as well as the Spark-based and SQL-based transformation patterns used across Lakehouse and Warehouse workloads.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "dp-700",
+    "domain_name": "Ingest and transform data",
+    "section_type": "exam_focus",
+    "content": "- Data Factory in Fabric: pipelines for orchestrated data movement; Copy Data activity, ForEach, If Condition, and lookup activities\n- Dataflows Gen2 (Power Query Online): low-code transformation; output destinations (Lakehouse, Warehouse, Azure SQL); staging behavior and why it differs from Dataflows Gen1\n- Notebooks (PySpark / Spark SQL): reading and writing Delta tables, incremental patterns, merge (upsert) with Delta Lake MERGE INTO\n- Data ingestion patterns: full load vs. incremental load; high-watermark patterns; change data capture (CDC)\n- Delta Lake operations: time travel (VERSION AS OF / TIMESTAMP AS OF), OPTIMIZE (file compaction), VACUUM (removing old files — default 7-day retention window)\n- Lakehouse table formats: managed (Fabric-controlled location) vs. external (user-specified path)\n- Spark configuration and session settings relevant to performance (shuffle partitions, broadcast joins)\n- Error handling and logging in pipelines: retry policies, failure branches, alerts\n- Data Factory triggers: scheduled, tumbling window, event-based",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "dp-700",
+    "domain_name": "Ingest and transform data",
+    "section_type": "key_concepts",
+    "content": "Data Factory Pipelines, Copy Data Activity, Dataflows Gen2 (Power Query Online), PySpark Notebooks, Spark SQL, Delta Lake MERGE INTO, Time Travel (VERSION AS OF), OPTIMIZE, VACUUM, Incremental Load, High-Watermark Pattern, Change Data Capture (CDC), Managed Table, External Table, Tumbling Window Trigger, Staging in Dataflows Gen2",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "dp-700",
+    "domain_name": "Monitor and optimize analytics solutions",
+    "section_type": "overview",
+    "content": "This domain covers the performance monitoring, troubleshooting, and optimization of Microsoft Fabric analytics solutions after deployment. At 33% of the DP-700 exam, it tests the ability to diagnose capacity pressure, tune query performance, optimize Delta Lake storage, and govern resource utilization across Fabric workloads.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "dp-700",
+    "domain_name": "Monitor and optimize analytics solutions",
+    "section_type": "exam_focus",
+    "content": "- Fabric Capacity Metrics app: interpreting CU (Capacity Unit) consumption, throttling vs. smoothing, interactive vs. background operations\n- Throttling behavior: when Fabric throttles requests; the difference between 10-second, 10-minute, and 24-hour smoothing windows\n- Query performance: identifying slow queries using query insights in Lakehouse/Warehouse; Spark UI for notebook job analysis\n- DirectLake fallback: conditions that force DirectLake to fall back to DirectQuery (unsupported functions, row-level security on some paths, framing)\n- Delta Lake optimization: OPTIMIZE for file compaction (Z-ORDER for multi-column predicate pushdown), VACUUM for reclaiming storage\n- Semantic model refresh: scheduled refresh, incremental refresh policy (RangeStart / RangeEnd), import vs. DirectLake refresh behavior\n- Monitoring Dataflow and pipeline runs: run history, failure reasons, refresh duration trends\n- Workspace-level monitoring: Fabric admin portal, tenant settings, activity logs via REST API or PowerShell\n- Cost optimization: pausing capacities during off-hours, right-sizing capacity SKU, evaluating Fabric vs. Azure Synapse for workloads",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "dp-700",
+    "domain_name": "Monitor and optimize analytics solutions",
+    "section_type": "key_concepts",
+    "content": "Fabric Capacity Metrics App, CU (Capacity Unit), Throttling, Smoothing Windows, Query Insights, Spark UI, DirectLake Fallback, OPTIMIZE, Z-ORDER, VACUUM, Incremental Refresh Policy (RangeStart/RangeEnd), Scheduled Refresh, Capacity Pause/Resume, Framing, Background vs. Interactive Operations, Fabric Admin Portal",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Design Applications",
+    "section_type": "overview",
+    "content": "This domain covers the architectural planning phase of GenAI application development on Databricks — selecting the right model type, interaction pattern, and retrieval strategy before writing code. At 14% of the exam, it tests the ability to translate business requirements into an appropriate AI application architecture, including the decision of when to use RAG, fine-tuning, or prompt engineering alone.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Design Applications",
+    "section_type": "exam_focus",
+    "content": "- LLM capability assessment: choosing between off-the-shelf foundation models, fine-tuned models, and RAG-augmented models based on task requirements\n- Interaction patterns: single-turn (question-answer), multi-turn (conversational with memory), agentic (tool-calling, planning)\n- RAG vs. fine-tuning decision framework: RAG for dynamic or proprietary knowledge retrieval; fine-tuning for style, tone, or domain-specific output format\n- Chunking strategies for RAG: fixed-size, sentence-based, semantic chunking — tradeoffs for retrieval precision vs. recall\n- Embedding model selection: task-specific (search vs. clustering), dimensionality tradeoffs, multilingual considerations\n- Vector database selection criteria: latency requirements, filtering capabilities, managed vs. self-hosted\n- Agent architecture patterns: ReAct (Reason + Act), tool-calling agents, multi-agent orchestration\n- Compound AI systems: combining retrieval, generation, reranking, and guardrails components\n- Mosaic AI (MLflow AI Gateway / Model Serving) as the abstraction layer for model access",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Design Applications",
+    "section_type": "key_concepts",
+    "content": "Foundation Model, RAG (Retrieval-Augmented Generation), Fine-Tuning, Prompt Engineering, Chunking Strategy, Embedding Model, Vector Database, Agent, Tool Calling, ReAct Pattern, Multi-Agent Orchestration, Compound AI System, Mosaic AI, MLflow AI Gateway, Model Serving, Single-Turn vs. Multi-Turn",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Data Preparation",
+    "section_type": "overview",
+    "content": "This domain covers the preparation of data for GenAI application development — including building and curating document corpora for RAG, constructing fine-tuning datasets, and applying data quality practices to AI training and retrieval pipelines. At 14% of the exam, it tests practical knowledge of Delta Lake-based data management in the context of AI/ML workloads.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Data Preparation",
+    "section_type": "exam_focus",
+    "content": "- Document parsing and preprocessing: extracting text from PDFs, HTML, and structured files; handling tables and images within documents\n- Chunking for RAG: fixed-size (token count), sentence-level, recursive/semantic chunking; overlap strategies to preserve context across chunk boundaries\n- Embedding generation: using Databricks-hosted embedding models (e.g., BGE, GTE), batching for throughput, storing embeddings in Delta tables alongside source chunks\n- Vector search index creation in Databricks: Delta Sync vs. Direct Vector Access indexes; index types (IVF, HNSW)\n- Fine-tuning dataset construction: instruction-following format (prompt/response pairs), data deduplication, filtering for quality, train/eval splits\n- Unity Catalog for AI data governance: cataloging embedding tables, model artifacts, and evaluation datasets\n- Data versioning: using Delta Lake time travel to reproduce training/evaluation datasets\n- Personally Identifiable Information (PII) scrubbing before ingestion into RAG corpora\n- Synthetic data generation for training augmentation using LLMs",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Data Preparation",
+    "section_type": "key_concepts",
+    "content": "Document Parsing, Chunking (Fixed/Sentence/Semantic), Chunk Overlap, Embedding Generation, Embedding Model, Vector Search Index, Delta Sync Index, Direct Vector Access Index, HNSW, IVF, Fine-Tuning Dataset, Instruction-Following Format, Unity Catalog, Delta Lake Time Travel, PII Scrubbing, Synthetic Data Generation",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Application Development",
+    "section_type": "overview",
+    "content": "This domain is the most heavily weighted on the Databricks GenAI exam at 30%, covering the hands-on implementation of GenAI applications — from RAG chains and agent logic to prompt construction, LangChain/LlamaIndex integration, and MLflow experiment tracking. It tests the ability to build, iterate, and log working AI applications within the Databricks environment.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Application Development",
+    "section_type": "exam_focus",
+    "content": "- RAG chain implementation: retrieval step (vector search query → top-k chunks), augmentation (inserting chunks into prompt context), generation (LLM call with augmented prompt)\n- LangChain on Databricks: LCEL (LangChain Expression Language) chain syntax, ChatModel wrappers for Databricks Model Serving, VectorStoreRetriever\n- LlamaIndex on Databricks: index types, query engine construction, node postprocessors for reranking\n- Prompt engineering techniques: zero-shot, few-shot, chain-of-thought (CoT), system prompts vs. user prompts\n- Prompt templates: parameterized templates with input variables; system/human message structure for chat models\n- Memory patterns for multi-turn conversations: ConversationBufferMemory, ConversationSummaryMemory — tradeoffs for context length\n- MLflow tracking for GenAI: logging prompts, parameters, and evaluation metrics with mlflow.log_param / mlflow.log_metric; autologging for LangChain\n- MLflow model logging: mlflow.pyfunc.log_model, mlflow.langchain.log_model — packaging chains for deployment\n- Reranking: cross-encoder rerankers to improve retrieval precision after initial vector search\n- Tool/function calling: defining tool schemas, parsing LLM tool-call responses, executing tools and feeding results back",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Application Development",
+    "section_type": "key_concepts",
+    "content": "RAG Chain, LangChain, LCEL (LangChain Expression Language), LlamaIndex, Prompt Template, Zero-Shot, Few-Shot, Chain-of-Thought (CoT), System Prompt, Conversation Memory, MLflow Tracking, mlflow.langchain.log_model, mlflow.pyfunc.log_model, Reranking, Cross-Encoder, Tool Calling, Function Calling, Top-K Retrieval, Augmented Prompt",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Assembling and Deploying Applications",
+    "section_type": "overview",
+    "content": "This domain covers packaging, deploying, and operationalizing GenAI applications so they can serve requests in production. At 22% of the exam, it tests knowledge of MLflow model packaging, Databricks Model Serving (Mosaic AI Model Serving), deployment configuration, and the integration of guardrails and safety layers into deployed endpoints.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Assembling and Deploying Applications",
+    "section_type": "exam_focus",
+    "content": "- MLflow model packaging: mlflow.pyfunc.log_model with custom Python models, mlflow.langchain.log_model for chains; model signatures and input examples\n- Databricks Model Serving (Mosaic AI Model Serving): creating serving endpoints, endpoint configuration (compute size, scale-to-zero), querying endpoints via REST API\n- Foundation Model APIs: pay-per-token access to hosted models (DBRX, Llama, Mixtral) without provisioned compute; vs. provisioned throughput for guaranteed latency\n- MLflow AI Gateway: unified interface for routing requests to multiple model providers; rate limits, usage tracking\n- Serving endpoint authentication: personal access tokens (PAT) vs. service principals\n- Guardrails integration: input/output filtering for PII, toxicity, off-topic queries; Lakehouse Monitoring for drift detection\n- Model versioning: MLflow Model Registry stages (Staging, Production, Archived); alias-based promotion vs. stage-based promotion\n- A/B testing / traffic splitting: routing a percentage of requests to a challenger model endpoint\n- Feedback collection: logging user feedback (thumbs up/down) to Delta tables for evaluation and fine-tuning data\n- Latency and throughput optimization: batching requests, async serving patterns, caching repeated queries",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Assembling and Deploying Applications",
+    "section_type": "key_concepts",
+    "content": "MLflow Model Serving, Databricks Model Serving (Mosaic AI), Serving Endpoint, Foundation Model APIs, Provisioned Throughput, Pay-Per-Token, MLflow AI Gateway, Model Registry, Model Alias, Model Staging, A/B Traffic Splitting, Guardrails, Input/Output Filtering, Scale-to-Zero, Service Principal, Feedback Loop, Lakehouse Monitoring",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Governance",
+    "section_type": "overview",
+    "content": "This domain covers the responsible governance of GenAI applications and the data assets that power them — including access control, lineage tracking, PII handling, and regulatory compliance considerations. At 8% of the exam, it tests Unity Catalog governance capabilities applied to AI artifacts (models, embeddings, evaluation datasets) alongside general AI ethics and risk management concepts.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Governance",
+    "section_type": "exam_focus",
+    "content": "- Unity Catalog for AI: registering models, embedding tables, and fine-tuning datasets as catalogued assets; column-level lineage for data used in training\n- Access control: table ACLs and row filters in Unity Catalog; granting model access to service principals\n- Data lineage for AI pipelines: tracking which Delta tables and documents were used to train or populate a RAG index\n- PII governance: identifying and masking PII before use in prompts or training data; Unity Catalog's built-in column tagging for sensitive data\n- AI risk categories: hallucination, prompt injection, data leakage, model bias — definitions and mitigation strategies\n- Responsible AI principles on Databricks: fairness, transparency, accountability\n- Audit logging: Unity Catalog audit logs for model access and data queries; tracking who queried which model and when\n- Compliance considerations: EU AI Act categories (high-risk AI systems), GDPR implications for personal data in training sets\n- Model cards and documentation: what a model card should contain and why",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Governance",
+    "section_type": "key_concepts",
+    "content": "Unity Catalog, Table ACLs, Row Filter, Column Lineage, PII Tagging, Data Lineage for AI, Hallucination, Prompt Injection, Data Leakage, Model Bias, Responsible AI, Audit Log, Model Card, EU AI Act, GDPR and Training Data, Service Principal Access, Column Masking",
+    "is_ai_generated": false
+  },
+
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Evaluation and Monitoring",
+    "section_type": "overview",
+    "content": "This domain covers assessing the quality of GenAI applications before and after deployment — including offline evaluation during development, online monitoring in production, and the use of LLM-as-judge scoring patterns. At 12% of the exam, it tests MLflow Evaluate, Mosaic AI Agent Evaluation, and Lakehouse Monitoring applied to AI workloads.",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Evaluation and Monitoring",
+    "section_type": "exam_focus",
+    "content": "- Evaluation metrics for RAG: retrieval metrics (context precision, context recall), generation metrics (faithfulness, answer relevance, answer correctness)\n- LLM-as-judge: using a judge LLM to score outputs on criteria like faithfulness and relevance; tradeoffs vs. human evaluation\n- MLflow Evaluate: mlflow.evaluate() with model type 'databricks-agent' or 'text'; built-in metrics, custom metric functions, evaluation datasets with ground-truth answers\n- Mosaic AI Agent Evaluation: Databricks-native evaluation framework for RAG chains and agents; per-question traces with retrieval and generation scores\n- Evaluation dataset construction: what makes a good evaluation set (representative questions, ground-truth answers, edge cases)\n- Online monitoring: logging inference requests and responses to Delta tables; Lakehouse Monitoring for detecting output drift, latency degradation, and error rate changes\n- Trace logging with MLflow: mlflow.start_span() for capturing retrieval and generation sub-steps; viewing traces in the MLflow UI\n- A/B evaluation: comparing two model versions on the same evaluation set to determine which is better before promoting\n- Handling evaluation at scale: batching evaluation calls, cost management for LLM-as-judge at volume",
+    "is_ai_generated": false
+  },
+  {
+    "cert_id": "databricks-genai",
+    "domain_name": "Evaluation and Monitoring",
+    "section_type": "key_concepts",
+    "content": "MLflow Evaluate, Mosaic AI Agent Evaluation, LLM-as-Judge, Context Precision, Context Recall, Faithfulness, Answer Relevance, Answer Correctness, Evaluation Dataset, Ground-Truth Answer, Trace Logging, MLflow Traces, Lakehouse Monitoring, Online Monitoring, Output Drift, A/B Evaluation, Custom Metric Function",
+    "is_ai_generated": false
+  }
+]

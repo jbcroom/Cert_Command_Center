@@ -17,7 +17,6 @@ import CertFormModal from './components/shared/CertFormModal'
 import RescheduleDateModal from './components/shared/RescheduleDateModal'
 import ArchiveModal from './components/shared/ArchiveModal'
 import { useCertifications } from './hooks/useCertifications'
-import FirstRunScreen from './components/shared/FirstRunScreen'
 
 function TitleUpdater({ certifications }) {
   const location = useLocation()
@@ -83,11 +82,9 @@ function AppRoutes() {
   const [helpOpen, setHelpOpen] = useState(false)
   const [refreshKey, setRefreshKey] = useState(0)
 
-  const { certifications, loading: certsLoading } = useCertifications({ includeArchived: true })
+  const { certifications } = useCertifications({ includeArchived: true })
   const location = useLocation()
   const refresh = useCallback(() => setRefreshKey(k => k + 1), [])
-
-  if (!certsLoading && certifications.length === 0) return <FirstRunScreen />
 
   const closeAll = useCallback(() => {
     setLogSessionCert(null); setAddCertOpen(false); setEditCert(null)

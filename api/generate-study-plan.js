@@ -99,19 +99,16 @@ Be specific and actionable. Base recommendations on the actual accuracy data pro
       const inputSnapshot = { domainAccuracy, flashcardsDue, mockScores, daysUntilExam, targetScore }
       const today = new Date().toISOString().split('T')[0]
 
-      // Mark existing plans for this cert as not current
-      await fetch(`${supabaseUrl}/rest/v1/study_plans?cert_id=eq.${certId}`, {
+      // Fire-and-forget: mark old plans not current, then insert new one
+      fetch(`${supabaseUrl}/rest/v1/study_plans?cert_id=eq.${certId}`, {
         method: 'PATCH',
         headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({ is_current: false }),
-      }).catch(() => {})
-
-      // Insert new plan
-      await fetch(`${supabaseUrl}/rest/v1/study_plans`, {
+      }).then(() => fetch(`${supabaseUrl}/rest/v1/study_plans`, {
         method: 'POST',
         headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
         body: JSON.stringify({ cert_id: certId, content, input_snapshot: inputSnapshot, valid_from: today, is_current: true }),
-      }).catch(() => {})
+      })).catch(() => {})
     }
 
     return new Response(JSON.stringify({ content }), { status: 200, headers: { 'Content-Type': 'application/json' } })
